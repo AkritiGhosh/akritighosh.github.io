@@ -34,7 +34,7 @@ const Sidebar = () => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       className={` fixed w-screen h-10 ${
-        open ? "bottom-0" : "-bottom-10"
+        open ? "bottom-0" : "-bottom-9"
       } left-0 right-0 bg-foreground p-2 py-5 flex justify-center items-center transition-all duration-200`}
     >
       <div className="relative h-full max-w-[50%] min-w-80 w-full flex flex-row justify-between text-coral">
@@ -45,7 +45,7 @@ const Sidebar = () => {
               path == tab?.route
                 ? "bottom-10 text-teal w-10 h-16"
                 : "bottom-4  w-10 h-10 hover:h-16"
-            } relative flex items-start justify-center group cursor-pointer hover:bottom-10 transition-all duration-75`}
+            } relative flex items-start justify-center group cursor-pointer hover:bottom-10 transition-all duration-0 `}
           >
             <span
               className={
@@ -88,19 +88,20 @@ const Sidebar = () => {
                   group-hover:before:shadow-[16px_24px]
                   group-hover:before:rounded-full
                   group-hover:before:shadow-foreground
+                
                  group-hover:after:content-['']
                     group-hover:after:absolute
                     group-hover:after:bg-background 
                     group-hover:after:w-9 group-hover:after:h-9 
                     group-hover:after:-top-2 group-hover:after:left-[52px] 
                     group-hover:after:shadow-[-16px_24px] group-hover:after:shadow-foreground
-                    group-hover:after:rounded-full `
+                    group-hover:after:rounded-full`
               }
             />
             <span className="z-10 inline-block w-6">{tab?.icon}</span>
             {path == tab?.icon && <span> </span>}
             <span
-              className={`absolute w-32 text-center transition-all duration-100 ${
+              className={`absolute w-32 text-center transition-all duration-200 ${
                 path == tab?.route
                   ? "bottom-2"
                   : "-bottom-5 group-hover:bottom-2"
