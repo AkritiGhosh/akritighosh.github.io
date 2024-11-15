@@ -12,7 +12,6 @@ import { usePathname } from "next/navigation";
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const path = usePathname();
-  console.log(path);
   const tabs = [
     { id: "home", name: "Home", icon: home, route: "/" },
     {
@@ -34,10 +33,10 @@ const Sidebar = () => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       className={` fixed w-screen h-10 ${
-        open ? "bottom-0" : "-bottom-9"
+        open ? "bottom-0" : "xl:-bottom-9 bottom-0"
       } left-0 right-0 bg-foreground p-2 py-5 flex justify-center items-center transition-all duration-200`}
     >
-      <div className="relative h-full max-w-[50%] min-w-80 w-full flex flex-row justify-between text-coral">
+      <div className="relative h-full max-w-[50%] min-w-72 w-full flex flex-row justify-between text-coral">
         {tabs?.map((tab, index) => (
           <div
             key={"tab" + index}
