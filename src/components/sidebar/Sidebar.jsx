@@ -8,6 +8,7 @@ import {
   project,
 } from "../../../public/sidebarIcons";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,8 @@ const Sidebar = () => {
     >
       <div className="relative h-full max-w-[50%] min-w-72 w-full flex flex-row justify-between text-coral">
         {tabs?.map((tab, index) => (
-          <div
+          <Link
+            href={tab?.route}
             key={"tab" + index}
             className={`${
               path == tab?.route
@@ -108,7 +110,7 @@ const Sidebar = () => {
             >
               {tab?.name}
             </span>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
