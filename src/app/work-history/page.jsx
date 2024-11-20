@@ -147,9 +147,5 @@ export default function WorkExperience() {
       ),
     },
   ];
-  return (
-    <div className="w-full">
-      <Timeline data={data} />
-    </div>
-  );
+  return <Timeline data={data} />;
 }
