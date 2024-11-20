@@ -37,6 +37,11 @@ const Sidebar = () => {
         open ? "bottom-0" : "xl:-bottom-9 bottom-0"
       } left-0 right-0 bg-foreground p-2 py-5 flex justify-center items-center transition-all duration-200 z-50`}
     >
+      <div
+        className={`fixed w-screen h-10 ${
+          open ? "bottom-10" : "bottom-10  xl:bottom-1"
+        }  bg-background -z-10  transition-all duration-200`}
+      />
       <div className="relative h-full max-w-[50%] min-w-72 w-full flex flex-row justify-between text-coral">
         {tabs?.map((tab, index) => (
           <Link
