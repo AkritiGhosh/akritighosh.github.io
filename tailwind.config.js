@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['"Tangerine", cursive'],
+        nums: ['"Amita", serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
