@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 
+const techmentimages = [];
 export default function WorkExperience() {
   const data = [
     {
@@ -45,103 +47,149 @@ export default function WorkExperience() {
       ),
     },
     {
-      title: "Early 2023",
+      title: "2022",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            I usually run out of copy, but when I see content this big, I try to
-            integrate lorem ipsum.
+          <p className="text-neutral-800 dark:text-neutral-200 text-base font-normal mb-4">
+            Joined{" "}
+            <span className="text-2xl font-medium inline-block ml-2">
+              SproutsAI
+            </span>
           </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Lorem ipsum is for people who are too lazy to write copy. But we are
-            not. Here are some more example of beautiful designs I built.
+          <p className="mb-4">
+            <span className="text-neutral-200 text-base font-normal">As</span>
+            <span className="text-2xl font-medium inline-block ml-2">
+              Senior Software Engineer - Frontend lead
+            </span>
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-          </div>
+          <ul className="leading-8 text-base">
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Part of the founding team, as the lead of frontend team{" "}
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Managed team of 10+ engineers; contributed to origin of 15k lines
+              React project{" "}
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Supervised the project deadlines and team performance; conducted
+              sprint calls and meeting as the Scrum master
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Configured the platform architecture; contributed to the most
+              initial conception; setup and oversaw different project management
+              and team management tools; assisted in hosting the web application
+              via Route53
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Mentored the junior developers and interns{" "}
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Assigned daily tasks and supervised their status using Jira{" "}
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Developed multiple features from initial requirement gathering to
+              deployment into production
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Reviewed the code and PRs of team members
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Integrated several 3rd party tools and softwares for complex
+              features such as Authentication & Authorization, SSO, video
+              conferencing, AI powered tools, data synchronization, sharing
+              information etc
+            </li>
+          </ul>
         </div>
       ),
     },
     {
-      title: "Changelog",
+      title: "2020",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Deployed 5 new components on Aceternity today
+          <p className="text-neutral-800 dark:text-neutral-200 text-base font-normal mb-4">
+            Joined{" "}
+            <span className="text-2xl font-medium inline-block ml-2">
+              Techment Technologies
+            </span>
           </p>
-          <div className="mb-8">
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Card grid component
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Startup template Aceternity
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
+          <p className="mb-4">
+            <span className="text-neutral-200 text-base font-normal">As</span>
+            <span className="text-2xl font-medium inline-block ml-2">
+              Software Engineer
+            </span>
+          </p>
+          <div className="flex  w-full relative gap-2">
+            {[
+              "techment_logo.jpg",
+              "techment-nextwealth.jpg",
+              "techment_team.jpg",
+              "techment-office.jpg",
+            ]?.map((url, i) => (
+              <div
+                key={url}
+                className={`relative min-w-16 w-1/4 hover:w-full h-80 bg-center bg-no-repeat ${
+                  i == 0 ? "bg-contain bg-white" : "bg-cover"
+                } transition-all duration-500 rounded-lg `}
+                style={{ backgroundImage: 'url("' + url + '")' }}
+              />
+            ))}
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
+          <ul className="text-base mt-5 leading-8">
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span> Worked in
+              the frontend team, along with 15+ team members
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Developed responsive web pages, with clean, efcient and scalable
+              code
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Voluntarily contributed in the update and maintenance of the
+              teams’ and project’s documentations.
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span> Assisted
+              in the onboarding on new team members{" "}
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span> Reviewed
+              and tested the code for fellow team members
+            </li>
+            <li>
+              <span className="text-coral inline-block mr-2">✫</span>
+              Constructed dynamic pages with user configurable sections and
+              content
+            </li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "Early 2020",
+      content: (
+        <div>
+          <div className="w-full mt-5 mb-8 px-5 flex flex-col gap-2">
+            <p className="text-neutral-800 dark:text-coal text-base md:text-xl font-normal">
+              {"Graduated from college"}
+            </p>
+            <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-2xl font-normal">
+              {"Bachelors of Technology - Computer Science & Technology"}
+            </p>
+            <p className="text-neutral-800 dark:text-coral text-base md:text-xl font-normal">
+              {"Government Engineering College, Raipur"}
+            </p>
           </div>
         </div>
       ),
