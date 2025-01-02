@@ -2,8 +2,50 @@
 import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
+import { CardStack } from "@/components/ui/cardStack";
+import { cn } from "@/lib/utils";
 
-const techmentimages = [];
+const CARDS = [
+  {
+    id: 0,
+    name: "Manu Arora",
+    designation: "Senior Software Engineer",
+    content: (
+      <p>
+        These cards are amazing, I want to use them in my
+        project. Framer motion is a godsend ngl tbh fam 🙏
+      </p>
+    ),
+  },
+  {
+    id: 1,
+    name: "Elon Musk",
+    designation: "Senior Shitposter",
+    content: (
+      <p>
+        I dont like this Twitter thing,{" "}
+        deleting it right away because yolo. Instead, I
+        would like to call it X.com so that it can easily
+        be confused with adult sites.
+      </p>
+    ),
+  },
+  {
+    id: 2,
+    name: "Tyler Durden",
+    designation: "Manager Project Mayhem",
+    content: (
+      <p>
+        The first rule of
+        Fight Club is that you do not talk about fight
+        club. The second rule of
+        Fight club is that you DO NOT TALK about fight
+        club.
+      </p>
+    ),
+  },
+];
+
 export default function WorkExperience() {
   const data = [
     {
@@ -56,6 +98,18 @@ export default function WorkExperience() {
               SproutsAI
             </span>
           </p>
+          <CardStack items={CARDS} />
+
+          {/* <p>
+          Authentication & Authorization
+          SSO
+          RBAC
+          PDF parser
+          Real time video conferencing
+          RT transcription 
+          Video summarization
+          Dynamic analytics
+          </p> */}
           <p className="mb-4">
             <span className="text-neutral-200 text-base font-normal">As</span>
             <span className="text-2xl font-medium inline-block ml-2">
