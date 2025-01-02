@@ -1,54 +1,67 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-
-let interval;
 
 export const CardStack = ({ items, offset, scaleFactor }) => {
   const CARD_OFFSET = offset || 10;
   const SCALE_FACTOR = scaleFactor || 0.06;
   const [cards, setCards] = useState(items);
-  const interval = 5000;
+  const intervalTime = 5000;
   const [timer, setTimer] = useState(0);
+  const cardIntervalRef = useRef(null);
+  const progressIntervalRef = useRef(null);
+
+  const resetIntervals = () => {
+    // Clear existing intervals
+    if (cardIntervalRef.current) clearInterval(cardIntervalRef.current);
+    if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+
+    // Restart progress and card intervals
+    setTimer(0);
+    progressIntervalRef.current = setInterval(() => {
+      setTimer((prev) => (prev < 100 ? prev + 1 : 0));
+    }, intervalTime / 100);
+
+    cardIntervalRef.current = setInterval(() => {
+      flipCards();
+    }, intervalTime);
+  };
 
   useEffect(() => {
-    const progressInterval = setInterval(() => {
-      setTimer((prev) => (prev < 100 ? prev + 1 : 0));
-    }, interval / 100); // Update progress every 1% of the interval time
-
-    const cardInterval = setInterval(() => {
-      flipCards();
-    }, interval);
+    resetIntervals(); // Initialize intervals on mount
 
     return () => {
-      clearInterval(cardInterval);
-      clearInterval(progressInterval);
+      // Clear intervals on component unmount
+      if (cardIntervalRef.current) clearInterval(cardIntervalRef.current);
+      if (progressIntervalRef.current)
+        clearInterval(progressIntervalRef.current);
     };
   }, []);
 
   const flipCards = () => {
-    setTimer(0);
+    setTimer(0); // Reset the timer to start the loader anew
     setCards((prevCards) => {
-      const newArray = [...prevCards]; // create a copy of the array
-      newArray.unshift(newArray.pop()); // move the last element to the front
+      const newArray = [...prevCards]; // Create a copy of the array
+      newArray.unshift(newArray.pop()); // Move the last element to the front
       return newArray;
     });
+    resetIntervals(); // Restart intervals when manually flipping cards
   };
 
   return (
-    <div className="relative  h-60 w-60 md:h-60 md:w-96">
+    <div className="relative h-60 w-60 md:h-60 md:w-96">
       {cards.map((card, index) => {
         return (
           <motion.div
             key={card.id}
-            className="absolute dark:bg-black bg-white h-60 w-60 md:h-60 md:w-96 rounded-3xl p-4 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between"
+            className="absolute bg-background h-60 w-60 md:h-60 md:w-96 rounded-3xl p-4 shadow-xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between"
             style={{
               transformOrigin: "top center",
             }}
             animate={{
               top: index * -CARD_OFFSET,
-              scale: 1 - index * SCALE_FACTOR, // decrease scale for cards that are behind
-              zIndex: cards.length - index, //  decrease z-index for the cards that are behind
+              scale: 1 - index * SCALE_FACTOR, // Decrease scale for cards that are behind
+              zIndex: cards.length - index, // Decrease z-index for the cards that are behind
             }}
           >
             <div className="font-normal text-neutral-700 dark:text-neutral-200">
@@ -64,7 +77,7 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
             </div>
             <button onClick={flipCards}>{"->"}</button>
             {/* Loader */}
-            <div className="absolute bottom-0 right-0 flex w-[calc(100%-40px)] h-px left-5 ">
+            <div className="absolute bottom-0 right-0 flex w-[calc(100%-40px)] h-px left-5">
               <div
                 className="bg-blue-500 h-full transition-all"
                 style={{ width: `${timer}%` }}
