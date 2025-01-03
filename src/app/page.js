@@ -3,7 +3,9 @@ import { wave } from "/public/shake-hand.gif";
 
 export default function Home() {
   return (
-    <div className="relative w-screen h-screen md:px-[10%] px-4 pb-6 snap-start snap-always flex flex-col text-navy justify-center gap-4">
+    <div
+      style={{backgroundSize:"200% 200%"}}
+      className="relative w-screen h-screen md:px-[10%] px-4 pb-6 snap-start snap-always flex flex-col text-navy justify-center gap-4">
       <h1 className="md:text-8xl text-6xl  !leading-loose font-medium flex flex-row-reverse md:flex-row items-center gap-4 md:justify-start justify-end">
         <Image
           className="object-contain max-h-28 h-20 md:h-28 w-auto"
@@ -15,7 +17,7 @@ export default function Home() {
         Hi!
       </h1>
       <h1 className="md:text-8xl text-6xl !leading-tight font-semibold">
-        I am <br className="block md:hidden"/> Akriti Ghosh
+        I am <br className="block md:hidden" /> Akriti Ghosh
       </h1>
       <h2 className="md:text-4xl text-2xl !leading-normal font-medium">
         Currently working as Senior Software Engineer
