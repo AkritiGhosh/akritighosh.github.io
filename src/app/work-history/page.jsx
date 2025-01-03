@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { CardStack } from "@/components/ui/cardStack";
-import { cn } from "@/lib/utils";
 
 const CARDS = [
   {
