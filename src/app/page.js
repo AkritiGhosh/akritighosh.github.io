@@ -1,11 +1,18 @@
+"use client";
 import Image from "next/image";
 import { wave } from "/public/shake-hand.gif";
+import useTheme from "@/hooks/useTheme";
 
 export default function Home() {
+  const { bgURL } = useTheme();
   return (
     <div
-      style={{backgroundSize:"200% 200%"}}
-      className="relative w-screen h-screen md:px-[10%] px-4 pb-6 snap-start snap-always flex flex-col text-navy justify-center gap-4">
+      style={{
+        backgroundImage: "url(" + bgURL + ")",
+        transition: "background-image 3s",
+      }}
+      className="relative w-screen h-screen md:px-[10%] px-4 pb-6 snap-start snap-always flex flex-col text-navy justify-center gap-4 bg-cover bg-center"
+    >
       <h1 className="md:text-8xl text-6xl  !leading-loose font-medium flex flex-row-reverse md:flex-row items-center gap-4 md:justify-start justify-end">
         <Image
           className="object-contain max-h-28 h-20 md:h-28 w-auto"
