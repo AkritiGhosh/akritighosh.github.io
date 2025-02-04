@@ -24,6 +24,7 @@ const Taskbar = () => {
         {/* Menu icon */}
         
         {/* Work History */}
+         
         {/* Projects */}
         {/* Contact */}
       </div>

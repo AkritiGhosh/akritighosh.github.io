@@ -16,17 +16,17 @@ const useTheme = () => {
         "theme-night"
       );
 
-      if (hour >= 6 && hour < 12) setTheme("morning");
-      else if (hour >= 12 && hour < 18) setTheme("afternoon");
-      else if (hour >= 18 && hour < 21) setTheme("evening");
+      if (hour >= 4 && hour < 12) setTheme("morning");
+      else if (hour >= 12 && hour < 17) setTheme("afternoon");
+      else if (hour >= 17 && hour < 20) setTheme("evening");
       else setTheme("night");
-      console.log("theme", theme);
+
       setPhoto((prev) => ((prev + 1) % 6) + 1);
       body.classList.add(`theme-${theme}`);
     };
 
     updateTheme();
-    const interval = setInterval(updateTheme, 4000); // Check every minute
+    const interval = setInterval(updateTheme, 30000); // Check every minute
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
   const bgURL = useMemo(() => {
