@@ -36,7 +36,10 @@ const Taskbar = () => {
             alt="Hello"
           />
         </button>
-        <button className="cursor-pointer w-10 h-10 flex items-center justify-center bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60">
+        <button
+          onClick={() => toggleModal("EXPERIENCE")}
+          className="cursor-pointer w-10 h-10 flex items-center justify-center bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60"
+        >
           <Image
             className="object-contain w-auto"
             src="/history.png"
@@ -45,7 +48,10 @@ const Taskbar = () => {
             alt="Experience"
           />
         </button>
-        <button className="cursor-pointer w-10 h-10 flex items-center justify-center bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60">
+        <button
+          onClick={() => toggleModal("PROJECTS")}
+          className="cursor-pointer w-10 h-10 flex items-center justify-center bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60"
+        >
           <Image
             className="object-contain w-auto"
             src="/file-explorer.png"
@@ -54,7 +60,10 @@ const Taskbar = () => {
             alt="Projects"
           />
         </button>
-        <button className="cursor-pointer w-10 h-10 flex items-center justify-center bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60">
+        <button
+          onClick={() => toggleModal("CONTACT")}
+          className="cursor-pointer w-10 h-10 flex items-center justify-center bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60"
+        >
           <Image
             className="object-contain w-auto"
             src="/contact.png"
