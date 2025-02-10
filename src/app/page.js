@@ -1,9 +1,14 @@
 "use client";
-import Image from "next/image";
+
 import useTheme from "@/hooks/useTheme";
+import Modal from "@/components/window/Modal";
+import StartMenu from "@/components/desktop/StartMenu";
+import { ModalContext } from "@/context/ModelContext";
+import { useContext } from "react";
 
 export default function Home() {
   const { bgURL } = useTheme();
+  const { modals } = useContext(ModalContext);
   return (
     <div
       style={{
@@ -12,24 +17,14 @@ export default function Home() {
       }}
       className="relative w-screen h-screen flex items-center bg-cover bg-center"
     >
-      <div className="p-5 md:px-[10%] pb-10 rounded-r-lg bg-black/50 backdrop-filter backdrop-blur-lg  flex flex-col text-navy justify-center gap-4 ">
-        <h1 className="md:text-8xl text-6xl  !leading-loose font-medium flex flex-row-reverse md:flex-row items-center gap-4 md:justify-start justify-end">
-          <Image
-            className="object-contain max-h-28 h-20 md:h-28 w-auto"
-            src="/shake-hand.gif"
-            width={112}
-            height={112}
-            alt="Hello"
-          />{" "}
-          Hi!
-        </h1>
-        <h1 className="md:text-8xl text-6xl !leading-tight font-semibold">
-          I am <br className="block md:hidden" /> Akriti Ghosh
-        </h1>
-        <h2 className="md:text-4xl text-2xl !leading-loose font-medium">
-          Senior Software Engineer
-        </h2>
-      </div>
+      {modals.START && (
+        <Modal
+          showTitleBar={false}
+          className={"absolute bottom-16 w-1/2 min-h-[50%] left-1/4 ring-white ring-1 ring-opacity-10 rounded"}
+        >
+          <StartMenu />
+        </Modal>
+      )}
     </div>
   );
 }
