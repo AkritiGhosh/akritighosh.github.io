@@ -4,7 +4,7 @@ import React from "react";
 const StartMenu = () => {
   return (
     <>
-      <div className="w-full h-auto grow p-5 md:p-[10%] pb-10 md:pb-10 rounded-t-lg bg-[#202020] backdrop-filter backdrop-blur-lg  flex flex-col text-navy justify-center gap-4 ">
+      <div className="w-full h-auto grow p-5 md:p-[10%] pb-10 md:pb-10 rounded-t-lg bg-[#202020]/70 backdrop-filter backdrop-blur-xl flex flex-col justify-center gap-4">
         <h1 className="md:text-5xl text-4xl  !leading-loose font-medium flex flex-row-reverse md:flex-row items-center gap-4 md:justify-start justify-end">
           <Image
             className="object-contain max-h-20 h-20 md:h-20 w-auto"
