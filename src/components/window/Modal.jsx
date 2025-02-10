@@ -1,9 +1,17 @@
 "use client";
 
 import { ModalContext } from "@/context/ModelContext";
+import Image from "next/image";
 import React, { useContext } from "react";
 
-const Modal = ({ title, children, showTitleBar, className, windowKey }) => {
+const Modal = ({
+  title,
+  children,
+  showTitleBar,
+  className,
+  windowKey,
+  titleIcon,
+}) => {
   const [maximized, setMaximized] = React.useState(true);
 
   const { closeModal } = useContext(ModalContext);
@@ -19,7 +27,16 @@ const Modal = ({ title, children, showTitleBar, className, windowKey }) => {
             !maximized && `rounded-t-sm`
           }`}
         >
-          <h1>{title}</h1>
+          <h1 className="flex gap-3 h-10 items-center">
+            <Image
+              className="object-contain w-5 h-5"
+              src={titleIcon}
+              width={18}
+              height={18}
+              alt="Hello"
+            />
+            <span className="inline-block text-base"> {title}</span>
+          </h1>
           <div className="w-auto h-10 relative flex">
             {maximized ? (
               <button
@@ -77,7 +94,9 @@ const Modal = ({ title, children, showTitleBar, className, windowKey }) => {
           </div>
         </div>
       )}
-      <div className="overflow-y-auto w-full relative h-[calc(100%-40px)]">{children}</div>
+      <div className="overflow-y-auto w-full relative h-[calc(100%-40px)]">
+        {children}
+      </div>
     </div>
   );
 };

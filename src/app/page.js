@@ -32,6 +32,7 @@ export default function Home() {
         <Modal
           showTitleBar={true}
           title="Work History"
+          titleIcon='/history.png'
           windowKey={"EXPERIENCE"}
         >
           <WorkExperience />
