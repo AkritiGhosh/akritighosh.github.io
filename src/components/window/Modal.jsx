@@ -94,7 +94,7 @@ const Modal = ({
           </div>
         </div>
       )}
-      <div className="overflow-y-auto w-full relative h-[calc(100%-40px)]">
+      <div className="overflow-y-auto w-full relative h-[calc(100%-40px)] scroll-thin">
         {children}
       </div>
     </div>
