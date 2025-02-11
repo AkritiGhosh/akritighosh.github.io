@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Tangerine:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Tangerine:wght@400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
 
 :root {
   --background: #e3dddc;
@@ -23,6 +21,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.scroll-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: #0097a7;
+}
 
 @layer base {
   :root {
