@@ -1,6 +1,7 @@
 "use client";
 
 import { ModalContext } from "@/context/ModelContext";
+import useTheme from "@/hooks/useTheme";
 import Image from "next/image";
 import React, { useContext } from "react";
 
@@ -13,15 +14,18 @@ const Modal = ({
   titleIcon,
 }) => {
   const [maximized, setMaximized] = React.useState(true);
-
+  const { isMobile } = useTheme();
+  console.log(isMobile);
   const { closeModal } = useContext(ModalContext);
 
-  const windowSize = maximized
+  const windowSize = isMobile
+    ? "w-full h-[calc(100%-32px)] inset-0 absolute z-[99]"
+    : maximized
     ? "w-full h-[calc(100%-56px)] top-0 absolute"
     : "w-[70vw] h-[70vh] left-[15vw] bottom-[15vh] rounded-sm border-gray-800 absolute border";
   return (
     <div className={className ?? windowSize}>
-      {showTitleBar && (
+      {!isMobile && showTitleBar && (
         <div
           className={`w-full h-10 flex items-center justify-between pl-4 py-1 bg-[#181818] ${
             !maximized && `rounded-t-sm`
@@ -94,7 +98,11 @@ const Modal = ({
           </div>
         </div>
       )}
-      <div className="overflow-y-auto w-full relative h-[calc(100%-40px)] scroll-thin">
+      <div
+        className={`overflow-y-auto w-full relative ${
+          !isMobile && showTitleBar ? "h-[calc(100%-40px)]" : "h-full"
+        } scroll-thin`}
+      >
         {children}
       </div>
     </div>

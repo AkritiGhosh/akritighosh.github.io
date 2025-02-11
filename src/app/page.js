@@ -22,7 +22,7 @@ export default function Home() {
         <Modal
           showTitleBar={false}
           className={
-            "absolute bottom-16 w-1/2 min-h-[50%] left-1/4 ring-white ring-1 ring-opacity-10 rounded"
+            "absolute w-full lg:w-1/2 min-h-[50%] h-[calc(100%-32px)] lg:h-auto left-0 lg:left-1/4 bottom-8 lg:bottom-16 ring-white ring-1 ring-opacity-10 rounded overflow-hidden"
           }
         >
           <StartMenu />

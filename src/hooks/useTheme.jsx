@@ -36,7 +36,7 @@ const useTheme = () => {
     checkWindowSize();
     window.addEventListener("resize", checkWindowSize);
     const interval = setInterval(updateTheme, 30000); // Check every minute
-    
+
     return () => {
       clearInterval(interval);
       window.removeEventListener("resize", checkWindowSize);
@@ -47,7 +47,7 @@ const useTheme = () => {
     return "/desktopBg/" + theme + "/" + photo + ".jpg";
   }, [theme, photo]);
 
-  return { bgURL };
+  return { bgURL, isMobile };
 };
 
 export default useTheme;
