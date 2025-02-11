@@ -1,25 +1,76 @@
 "use client";
 import { createContext, useState } from "react";
 
-const modalObj = {
-  START: false,
-  PROJECTS: false,
-  CONTACT: false,
-  EXPERIENCE: false,
-};
 export const ModalContext = createContext();
 
-export const ModalContextProvider = ({ children }) => {
-  const [modals, setModals] = useState(modalObj);
+const modalState = [
+  {
+    id: "START",
+    title: false,
+    open: false,
+    maximixed: true,
+  },
+  {
+    id: "PROJECTS",
+    title: {
+      text: "Projects in portfolio",
+      icon: "/file-explorer.png",
+    },
+    open: false,
+    maximixed: true,
+  },
+  {
+    id: "EXPERIENCE",
+    title: {
+      text: "Work History",
+      icon: "/history.png",
+    },
+    open: false,
+    maximixed: true,
+  },
+  {
+    id: "CONTACT",
+    title: {
+      text: "Contact Me",
+      icon: "/contact.png",
+    },
+    open: false,
+    maximixed: true,
+  },
+];
 
-  const openModal = (modal) => setModals({ ...modals, [modal]: true });
-  const closeModal = (modal) => setModals({ ...modals, [modal]: false });
-  const toggleModal = (modal) =>
-    setModals({ ...modals, [modal]: !modals[modal] });
+export const ModalContextProvider = ({ children }) => {
+  const [modals, setModals] = useState(modalState);
+
+  const isAnyModalOpen =
+    modals.filter((modal) => modal?.open == true).length > 0;
+  const isModalOpen = (id) => modals.find((modal) => modal?.id == id)?.open;
+  const isModalMaximised = (id) =>
+    modals.find((modal) => modal?.id == id)?.maximixed;
+
+  const openModal = (id) =>
+    setModals((prev) => (prev?.id == id ? { ...prev, open: true } : prev));
+  const closeModal = (id) =>
+    setModals((prev) => (prev?.id == id ? { ...prev, open: false } : prev));
+  const closeAllModals = () =>
+    setModals(modals?.map((modal) => ({ ...modal, open: false })));
+  const toggleModal = (id) =>
+    setModals((prev) =>
+      prev?.id == id ? { ...prev, open: !prev?.open } : prev
+    );
 
   return (
     <ModalContext.Provider
-      value={{ openModal, closeModal, toggleModal, modals }}
+      value={{
+        modals,
+        isAnyModalOpen,
+        isModalOpen,
+        isModalMaximised,
+        openModal,
+        closeModal,
+        toggleModal,
+        closeAllModals,
+      }}
     >
       {children}
     </ModalContext.Provider>
