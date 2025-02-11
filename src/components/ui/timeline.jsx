@@ -24,7 +24,7 @@ export const Timeline = ({ data }) => {
 
   return (
     <div
-      className="w-full dark:bg-background font-sans md:px-10"
+      className="w-full dark:bg-[#202020]/90 backdrop-blur-2xl font-sans md:px-10"
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto pb-5 pt-10 md:pt-16 px-8 md:px-8 lg:px-10 text-center md:text-left">
@@ -35,7 +35,7 @@ export const Timeline = ({ data }) => {
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
           <div
-            key={index}
+            key={"exp"+index}
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
@@ -66,7 +66,7 @@ export const Timeline = ({ data }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-white via-coral to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-white via-teal to-transparent from-[0%] via-[10%] rounded-full"
           />
         </div>
       </div>
