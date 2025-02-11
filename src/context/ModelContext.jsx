@@ -49,16 +49,24 @@ export const ModalContextProvider = ({ children }) => {
     modals.find((modal) => modal?.id == id)?.maximixed;
 
   const openModal = (id) =>
-    setModals((prev) => (prev?.id == id ? { ...prev, open: true } : prev));
+    setModals(
+      modals.map((prev) => (prev?.id == id ? { ...prev, open: true } : prev))
+    );
   const closeModal = (id) =>
-    setModals((prev) => (prev?.id == id ? { ...prev, open: false } : prev));
+    setModals(
+      modals.map((prev) => (prev?.id == id ? { ...prev, open: false } : prev))
+    );
   const closeAllModals = () =>
     setModals(modals?.map((modal) => ({ ...modal, open: false })));
   const toggleModal = (id) =>
-    setModals((prev) =>
-      prev?.id == id ? { ...prev, open: !prev?.open } : prev
+    setModals(
+      modals.map((prev) =>
+        prev?.id == id ? { ...prev, open: !prev?.open } : prev
+      )
     );
-
+  console.log(modals.map((prev) =>
+    prev?.id == "START" ? { ...prev, open: !prev?.open } : prev
+  ));
   return (
     <ModalContext.Provider
       value={{

@@ -9,7 +9,7 @@ import WorkExperience from "@/components/desktop/work-history/page";
 
 export default function Home() {
   const { bgURL } = useTheme();
-  const { modals } = useContext(ModalContext);
+  const { isModalOpen } = useContext(ModalContext);
   return (
     <div
       style={{
@@ -18,7 +18,7 @@ export default function Home() {
       }}
       className="relative w-screen h-screen flex items-center bg-cover bg-center overflow-hidden"
     >
-      {modals.START && (
+      {isModalOpen("START") && (
         <Modal
           showTitleBar={false}
           className={
@@ -28,11 +28,11 @@ export default function Home() {
           <StartMenu />
         </Modal>
       )}
-      {modals.EXPERIENCE && (
+      {isModalOpen("EXPERIENCE") && (
         <Modal
           showTitleBar={true}
           title="Work History"
-          titleIcon='/history.png'
+          titleIcon="/history.png"
           windowKey={"EXPERIENCE"}
         >
           <WorkExperience />
