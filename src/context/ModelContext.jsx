@@ -64,9 +64,7 @@ export const ModalContextProvider = ({ children }) => {
         prev?.id == id ? { ...prev, open: !prev?.open } : prev
       )
     );
-  console.log(modals.map((prev) =>
-    prev?.id == "START" ? { ...prev, open: !prev?.open } : prev
-  ));
+
   return (
     <ModalContext.Provider
       value={{
