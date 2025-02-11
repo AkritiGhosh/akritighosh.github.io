@@ -12,62 +12,64 @@ const Taskbar = () => {
 
   return (
     <div className="w-full flex fixed h-auto lg:h-14 bottom-0 flex-col items-center justify-center lg:gap-x-5 lg:border-t lg:border-stone-700">
-      {!isMobile ||
-        (isMobile && !isAnyModalOpen && (
-          <div className="w-full max-w-sm lg:max-w-full mx-auto h-14 flex items-center justify-evenly lg:justify-center lg:gap-x-8 bg-transparent lg:bg-stone-950/90">
-            <button
-              onClick={() => toggleModal("START")}
-              className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-2 rounded-sm hover:bg-stone-700/60`}
-            >
-              <Image
-                className="object-contain w-auto"
-                src="/start.png"
-                width={26}
-                height={26}
-                alt="Hello"
-              />
-            </button>
-            <button
-              onClick={() => toggleModal("EXPERIENCE")}
-              className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60`}
-            >
-              <Image
-                className="object-contain w-auto"
-                src="/history.png"
-                width={26}
-                height={26}
-                alt="Experience"
-              />
-            </button>
-            <button
-              onClick={() => toggleModal("PROJECTS")}
-              className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60`}
-            >
-              <Image
-                className="object-contain w-auto"
-                src="/file-explorer.png"
-                width={26}
-                height={26}
-                alt="Projects"
-              />
-            </button>
-            <button
-              onClick={() => toggleModal("CONTACT")}
-              className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60`}
-            >
-              <Image
-                className="object-contain w-auto"
-                src="/contact.png"
-                width={26}
-                height={26}
-                alt="Contact"
-              />
-            </button>
-          </div>
-        ))}
+      {!isMobile || (isMobile && !isAnyModalOpen) ? (
+        <div className="w-full max-w-sm lg:max-w-full mx-auto h-14 flex items-center justify-evenly lg:justify-center lg:gap-x-8 bg-transparent lg:bg-stone-950/90">
+          <button
+            onClick={() => toggleModal("START")}
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-2 rounded-sm hover:bg-stone-700/60`}
+          >
+            <Image
+              className="object-contain w-auto"
+              src="/start.png"
+              width={26}
+              height={26}
+              alt="Hello"
+            />
+          </button>
+          <button
+            onClick={() => toggleModal("EXPERIENCE")}
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60`}
+          >
+            <Image
+              className="object-contain w-auto"
+              src="/history.png"
+              width={26}
+              height={26}
+              alt="Experience"
+            />
+          </button>
+          <button
+            onClick={() => toggleModal("PROJECTS")}
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60`}
+          >
+            <Image
+              className="object-contain w-auto"
+              src="/file-explorer.png"
+              width={26}
+              height={26}
+              alt="Projects"
+            />
+          </button>
+          <button
+            onClick={() => toggleModal("CONTACT")}
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60`}
+          >
+            <Image
+              className="object-contain w-auto"
+              src="/contact.png"
+              width={26}
+              height={26}
+              alt="Contact"
+            />
+          </button>
+        </div>
+      ) : null}
       {isMobile && isAnyModalOpen && (
         <div className="w-full h-8 flex items-center justify-center bg-[#181818]">
-          <button className="p-1 rounded-full hover:bg-white/10" onClick={closeAllModals}>
+          <button
+            className="p-1 rounded-full hover:bg-white/10"
+            onClick={closeAllModals}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
