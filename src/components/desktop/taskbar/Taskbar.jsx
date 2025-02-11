@@ -1,25 +1,13 @@
 "use client";
 
 import { ModalContext } from "@/context/ModelContext";
+import useTheme from "@/hooks/useTheme";
 import Image from "next/image";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 
 const Taskbar = () => {
+  const { isMobile } = useTheme();
   const { toggleModal, closeAllModals } = useContext(ModalContext);
-  const [isMobile, setIsMobile] = useState(false);
-
-  //choose the screen size
-  const handleResize = () => {
-    if (window.innerWidth < 1024) setIsMobile(true);
-    else setIsMobile(false);
-  };
-
-  // create an event listener
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  });
 
   return (
     <div className="w-full flex fixed h-auto lg:h-14 bottom-0 flex-col items-center justify-center lg:gap-x-5 lg:border-t lg:border-stone-700">

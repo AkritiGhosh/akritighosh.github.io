@@ -5,7 +5,13 @@ import { useEffect, useMemo, useState } from "react";
 const useTheme = () => {
   const [photo, setPhoto] = useState(1);
   const [theme, setTheme] = useState("morning");
- 
+  const [isMobile, setIsMobile] = useState(false);
+
+  const checkWindowSize = () => {
+    if (window.innerWidth < 1024) setIsMobile(true);
+    else setIsMobile(false);
+  };
+
   const updateTheme = () => {
     const hour = new Date().getHours();
     const body = document.body;
@@ -27,10 +33,16 @@ const useTheme = () => {
 
   useEffect(() => {
     updateTheme();
+    checkWindowSize();
+    window.addEventListener("resize", checkWindowSize);
     const interval = setInterval(updateTheme, 30000); // Check every minute
-    return () => clearInterval(interval); // Cleanup on unmount
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("resize", checkWindowSize);
+    }; // Cleanup on unmount
   }, []);
-  
+
   const bgURL = useMemo(() => {
     return "/desktopBg/" + theme + "/" + photo + ".jpg";
   }, [theme, photo]);
