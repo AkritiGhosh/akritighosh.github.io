@@ -24,8 +24,15 @@ body {
 .scroll-thin::-webkit-scrollbar {
   width: 4px;
   height: 4px;
-  background-color: #0097a7;
 }
+.scroll-thin::-webkit-scrollbar-track {
+  background-color: #202020;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background-color: theme("colors.teal");
+  border-radius: 8px;
+}
+
 
 @layer base {
   :root {
