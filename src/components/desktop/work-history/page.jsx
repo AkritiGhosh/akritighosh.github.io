@@ -4,6 +4,14 @@ import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { CardStack } from "@/components/ui/cardStack";
 
+const TechmentPortfolio = [
+  "Built customizable digital fliers and microsites for major universities and hospitals (Stanford, Harvard, UBC) to boost donor engagement. Think of it as a dynamic CMS but tailored for non-profits.",
+  "Created analytics reports using Google Charts to visualize fundraising trends and donor behavior, making reports more insightful.",
+  "Developed a fully responsive, dynamic template CMS that allowed clients to generate webpages with unique URL and download high-quality PDFs of promotional materials.",
+  "Took ownership of the reports and analytics section, improving performance and making data insights more intuitive and accessible.",
+  "Documented onboarding processes for new developers and clients, which became the go-to playbook for every new team member. Conducted code reviews and helped onboard new developers, ensuring clean and maintainable code.",
+  "Worked in a fast-paced Agile environment with daily scrums and quick iterative development based on client feedback.",
+];
 const CARDS = [
   {
     id: 0,
@@ -39,7 +47,6 @@ const CARDS = [
       </p>
     ),
   },
- 
 ];
 
 export default function WorkExperience() {
@@ -178,7 +185,7 @@ export default function WorkExperience() {
               Software Engineer
             </span>
           </p>
-          <div className="flex  w-full relative gap-2">
+          <div className="flex flex-col lg:flex-row h-80 w-full relative gap-2">
             {[
               "techment_logo.jpg",
               "techment-nextwealth.jpg",
@@ -187,7 +194,7 @@ export default function WorkExperience() {
             ]?.map((url, i) => (
               <div
                 key={url}
-                className={`relative min-w-16 w-1/4 hover:w-full h-80 bg-center bg-no-repeat ${
+                className={`relative min-w-16 w-full lg:w-1/4 hover:w-full h-1/4 lg:h-80 hover:h-full focus:h-full bg-center bg-no-repeat ${
                   i == 0 ? "bg-contain bg-white" : "bg-cover"
                 } transition-all duration-500 rounded-lg `}
                 style={{ backgroundImage: 'url("' + url + '")' }}
@@ -195,33 +202,12 @@ export default function WorkExperience() {
             ))}
           </div>
           <ul className="text-base mt-5 leading-8">
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span> Worked in
-              the frontend team, along with 15+ team members
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Developed responsive web pages, with clean, efcient and scalable
-              code
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Voluntarily contributed in the update and maintenance of the
-              teams’ and project’s documentations.
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span> Assisted
-              in the onboarding on new team members{" "}
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span> Reviewed
-              and tested the code for fellow team members
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Constructed dynamic pages with user configurable sections and
-              content
-            </li>
+            {TechmentPortfolio?.map((portfolio, i) => (
+              <li key={"tp" + i}>
+                <span className="text-coral inline-block mr-2">✫</span>
+                <span>{portfolio}</span>
+              </li>
+            ))}
           </ul>
         </div>
       ),
@@ -230,7 +216,7 @@ export default function WorkExperience() {
       title: "2016 - 2020",
       content: (
         <div>
-          <div className="w-full mt-5 mb-8 px-5 flex flex-col gap-2">
+          <div className="w-full mt-5 mb-8 flex flex-col gap-2">
             <p className="text-neutral-800 dark:text-coal text-base md:text-xl font-normal">
               {"Graduated from college"}
             </p>
