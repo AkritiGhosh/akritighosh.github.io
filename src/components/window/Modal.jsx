@@ -7,7 +7,8 @@ import React, { useContext } from "react";
 
 const Modal = ({ id, children, className }) => {
   const { isMobile } = useTheme();
-  const { getModalData, changeModalOpen, changeModalSize } = useContext(ModalContext);
+  const { getModalData, changeModalOpen, changeModalSize } =
+    useContext(ModalContext);
 
   const modalData = getModalData(id);
   const showTitleBar = modalData?.title == false ? false : true;
@@ -16,17 +17,18 @@ const Modal = ({ id, children, className }) => {
 
   const windowSize = isMobile
     ? "w-full h-[calc(100%-32px)] inset-0 absolute z-[99]"
-    : modalData?.maximized
+    : modalData?.maximised
     ? "w-full h-[calc(100%-56px)] top-0 absolute"
     : "w-[70vw] h-[70vh] left-[15vw] bottom-[15vh] rounded-sm border-gray-800 absolute border";
 
+  console.log(isMobile, className, modalData?.maximised, windowSize);
   return (
     <div className={className ?? windowSize}>
       {/* Title Bar */}
       {!isMobile && showTitleBar && (
         <div
           className={`w-full h-12 flex items-center justify-between pl-4 py-1 bg-[#181818] ${
-            !modalData?.maximized && `rounded-t-sm`
+            !modalData?.maximised && `rounded-t-sm`
           }`}
         >
           <h1 className="flex gap-3 h-12 items-center">
@@ -42,7 +44,7 @@ const Modal = ({ id, children, className }) => {
             <span className="inline-block text-base"> {title}</span>
           </h1>
           <div className="w-auto h-12 relative flex">
-            {modalData?.maximized ? (
+            {modalData?.maximised ? (
               <button
                 onClick={() => changeModalSize(id, false)}
                 className="h-12 w-12 px-2 hover:bg-slate-500/20 inline-flex items-center justify-center"
@@ -77,7 +79,7 @@ const Modal = ({ id, children, className }) => {
             <button
               onClick={() => changeModalOpen(id, false)}
               className={`h-12 w-12 px-2 hover:bg-red-500/70 ${
-                !modalData?.maximized && `rounded-tr-sm`
+                !modalData?.maximised && `rounded-tr-sm`
               } inline-flex items-center justify-center`}
             >
               <svg

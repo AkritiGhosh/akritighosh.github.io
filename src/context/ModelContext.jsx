@@ -8,7 +8,7 @@ const modalState = [
     id: "START",
     title: false,
     open: false,
-    maximixed: true,
+    maximised: true,
   },
   {
     id: "PROJECTS",
@@ -17,7 +17,7 @@ const modalState = [
       icon: "/file-explorer.png",
     },
     open: false,
-    maximixed: true,
+    maximised: true,
   },
   {
     id: "EXPERIENCE",
@@ -26,7 +26,7 @@ const modalState = [
       icon: "/history.png",
     },
     open: false,
-    maximixed: true,
+    maximised: true,
   },
   {
     id: "CONTACT",
@@ -35,7 +35,7 @@ const modalState = [
       icon: "/contact.png",
     },
     open: false,
-    maximixed: true,
+    maximised: true,
   },
 ];
 
@@ -46,7 +46,7 @@ export const ModalContextProvider = ({ children }) => {
     modals.filter((modal) => modal?.open == true).length > 0;
   const isModalOpen = (id) => modals.find((modal) => modal?.id == id)?.open;
   const isModalMaximised = (id) =>
-    modals.find((modal) => modal?.id == id)?.maximixed;
+    modals.find((modal) => modal?.id == id)?.maximised;
 
   const getModalData = (id) => modals.find((modal) => modal?.id == id);
 
@@ -79,10 +79,10 @@ export const ModalContextProvider = ({ children }) => {
       )
     );
 
-  const changeModalSize = (id, maximized) =>
+  const changeModalSize = (id, maximised) =>
     setModals(
       modals.map((prev) =>
-        prev?.id == id ? { ...prev, maximized: maximized } : prev
+        prev?.id == id ? { ...prev, maximised: maximised } : prev
       )
     );
 

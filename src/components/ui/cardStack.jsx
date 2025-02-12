@@ -1,10 +1,14 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { ModalContext } from "@/context/ModelContext";
 
 export const CardStack = ({ items, offset, scaleFactor }) => {
-  const CARD_OFFSET = offset || 5;
-  const SCALE_FACTOR = scaleFactor || 0.03;
+  const { isModalMaximised } = useContext(ModalContext);
+
+  const CARD_OFFSET = offset || 2;
+  const SCALE_FACTOR = scaleFactor || 0.06;
   const [cards, setCards] = useState(items);
   const intervalTime = 5000;
   const [timer, setTimer] = useState(0);
@@ -49,14 +53,24 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
   };
 
   return (
-    <div className="relative h-60 w-60 md:h-60 md:w-96">
+    <div
+      className={`relative h-80 min-w-60 w-4/5 md:h-80 ${
+        isModalMaximised("EXPERIENCE")
+          ? "lg:w-[25rem]"
+          : "lg:max-w-80"
+      }`}
+    >
       {cards.map((card, index) => {
         return (
           <motion.div
             key={card.id}
-            className="absolute bg-background h-60 w-60 md:h-60 md:w-96 rounded-3xl p-4 shadow-xl border border-white/[0.1] shadow-white/[0.05] flex flex-col justify-between"
+            className={`absolute bg-[#181818] h-80 w-full md:h-80  ${
+              isModalMaximised("EXPERIENCE")
+                ? "lg:w-[25rem]"
+                : "md:w-60 lg:w-80 "
+            } rounded-3xl p-4 shadow-xl border border-white/[0.1] shadow-white/[0.05] flex flex-col justify-between`}
             style={{
-              transformOrigin: "top right",
+              transformOrigin: "center right",
             }}
             animate={{
               top: index * -CARD_OFFSET,
@@ -65,23 +79,40 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
               zIndex: cards.length - index, // Decrease z-index for the cards that are behind
             }}
           >
-            <div className="font-normal text-neutral-200">
-              {card.content}
-            </div>
-            <div>
-              <p className="font-medium text-white">
-                {card.name}
+            <div className="flex flex-col gap-2 grow justify-evenly">
+              <p className="font-medium text-base md:text-lg text-white pb-1.5 md:pb-2.5 border-b border-neutral-500">
+                {card.title}
               </p>
-              <p className="font-normal text-neutral-200">
-                {card.designation}
-              </p>
+              {card?.imgSrc && (
+                <Image
+                  width={240}
+                  height={120}
+                  className="w-auto h-20 md:h-[8.25rem] object-cover rounded-lg mx-auto"
+                  src={"/featureCards/" + card.imgSrc}
+                  alt={card.title}
+                />
+              )}
+              <div className="flex flex-wrap gap-2">
+                {card?.tags?.map((tag, i) => (
+                  <span
+                    key={card?.id + i}
+                    className="font-normal bg-coal/40 text-neutral-200 py-0.5 md:py-1 px-1.5 md:px-2 rounded-lg text-xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {card?.description && (
+                <p className="text-white text-xs md:text-sm">
+                  {card.description}
+                </p>
+              )}
             </div>
-            <button onClick={flipCards}>{"->"}</button>
             {/* Loader */}
             <div className="absolute bottom-0 right-0 flex w-[calc(100%-40px)] h-px left-5">
               <div
-                className="bg-blue-500 h-full transition-all"
-                style={{ width: `${timer}%` }}
+                className="bg-teal h-full transition-all"
+                style={{ width: `${timer + 10}%` }}
               ></div>
             </div>
           </motion.div>

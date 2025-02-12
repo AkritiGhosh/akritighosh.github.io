@@ -1,11 +1,13 @@
 "use client";
+import { ModalContext } from "@/context/ModelContext";
 import { useScroll, useTransform, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 export const Timeline = ({ data }) => {
   const ref = useRef(null);
   const containerRef = useRef(null);
   const [height, setHeight] = useState(0);
+  const { isModalMaximised } = useContext(ModalContext);
 
   useEffect(() => {
     if (ref.current) {
@@ -35,7 +37,11 @@ export const Timeline = ({ data }) => {
             key={"exp" + index}
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+            <div
+              className={`sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs ${
+                isModalMaximised("EXPERIENCE") ? "lg:max-w-md md:w-full" : "lg:max-w-sm"
+              }`}
+            >
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-[#202020] flex items-center justify-center">
                 <div className="h-2 w-2 md:h-4 md:w-4 rounded-full bg-teal border border-white p-1.5 md:p-2" />
               </div>
@@ -44,7 +50,7 @@ export const Timeline = ({ data }) => {
               </h3>
             </div>
 
-            <div className="relative pl-16 pr-4 md:pl-4 w-full">
+            <div className="relative pl-16 pr-4 md:pl-4 w-full min-w-80 grow">
               <h3 className="md:hidden block text-2xl mb-4 text-left !leading-normal font-bold text-white font-nums">
                 {item.title}
               </h3>
