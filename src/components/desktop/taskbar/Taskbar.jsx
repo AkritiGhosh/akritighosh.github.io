@@ -29,7 +29,7 @@ const Taskbar = () => {
           >
             <Image
               className="object-contain w-auto"
-              src="/start.png"
+              src="/taskbar/start.png"
               width={26}
               height={26}
               alt="Hello"
@@ -45,7 +45,7 @@ const Taskbar = () => {
           >
             <Image
               className="object-contain w-auto"
-              src="/history.png"
+              src="/taskbar/history.png"
               width={26}
               height={26}
               alt="Experience"
@@ -61,7 +61,7 @@ const Taskbar = () => {
           >
             <Image
               className="object-contain w-auto"
-              src="/file-explorer.png"
+              src="/taskbar/file-explorer.png"
               width={26}
               height={26}
               alt="Projects"
@@ -77,7 +77,7 @@ const Taskbar = () => {
           >
             <Image
               className="object-contain w-auto"
-              src="/contact.png"
+              src="/taskbar/contact.png"
               width={26}
               height={26}
               alt="Contact"
