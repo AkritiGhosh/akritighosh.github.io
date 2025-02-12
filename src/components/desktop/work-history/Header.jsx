@@ -5,13 +5,13 @@ const Header = ({ position, company, jobType, location }) => {
     <div>
       <p className="text-neutral-200 text-sm md:text-base font-normal !leading-snug mb-2">
         Joined{" "}
-        <span className="text-lg md:text-xl font-medium inline-block ml-2 !leading-snug">
+        <span className="text-lg md:text-xl font-medium inline ml-2 !leading-snug">
           {company}
         </span>
       </p>
       <p className="mb-4">
         <span className="text-sm md:text-base font-normal text-neutral-200">As</span>
-        <span className="text-xl md:text-2xl font-medium inline-block ml-2 text-coral">
+        <span className="text-xl md:text-2xl font-medium inline ml-2 text-coral">
           {position}
         </span>
       </p>
