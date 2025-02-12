@@ -60,7 +60,7 @@ export const ModalContextProvider = ({ children }) => {
       setModals((prev) => {
         return prev.map((modal) => {
           if (modal?.id == "START") return { ...modal, open: false };
-          if (modal?.id == id) return { ...modal, open: !modal?.open };
+          if (modal?.id == id) return { ...modal, open: open };
           return modal;
         });
       });
