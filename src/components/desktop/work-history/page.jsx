@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { CardStack } from "@/components/ui/cardStack";
 import {
@@ -12,8 +12,10 @@ import {
   techmentPortfolio,
 } from "./content";
 import Header from "./Header";
+import { ModalContext } from "@/context/ModelContext";
 
 export default function WorkExperience() {
+  const { isModalMaximised } = useContext(ModalContext);
   const data = [
     {
       title: "2024",
@@ -26,7 +28,13 @@ export default function WorkExperience() {
             location={"Fully Remote"}
           />
 
-          <div className="grid grid-cols-2 gap-4">
+          <div
+            className={`grid grid-cols-1 ${
+              isModalMaximised("EXPERIENCE")
+                ? "lg:grid-cols-2"
+                : "xl:grid-cols-2"
+            } gap-4`}
+          >
             {sharboScreenshots?.map((pic) => (
               <Image
                 key={pic}
@@ -81,11 +89,19 @@ export default function WorkExperience() {
             jobType={"Full-time"}
             location={"Bhilai, India"}
           />
-          <div className="flex flex-col lg:flex-row h-80 w-full relative gap-2">
+          <div
+            className={`flex flex-col ${
+              isModalMaximised("EXPERIENCE") ? "lg:flex-row" : "xl:flex-row"
+            } h-80 w-full relative gap-2`}
+          >
             {techmentImgs?.map((url, i) => (
               <div
                 key={url}
-                className={`relative min-w-16 w-full lg:w-1/4 hover:w-full h-1/4 lg:h-80 hover:h-full focus:h-full bg-center bg-no-repeat ${
+                className={`relative min-w-16 w-full hover:w-full h-1/4  hover:h-full focus:h-full bg-center bg-no-repeat ${
+                  isModalMaximised("EXPERIENCE")
+                    ? "lg:w-1/4 lg:h-80"
+                    : "xl:w-1/4 xl:h-80"
+                } ${
                   i == 0 ? "bg-contain bg-white" : "bg-cover"
                 } transition-all duration-500 rounded-lg `}
                 style={{ backgroundImage: 'url("' + url + '")' }}
@@ -104,7 +120,7 @@ export default function WorkExperience() {
       ),
     },
     {
-      title: "2016 - 2020",
+      title: "May 2020",
       content: (
         <div>
           <div className="w-full mt-5 mb-8 flex flex-col gap-2">
