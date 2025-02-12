@@ -24,6 +24,14 @@ const sproutsPortfolio = [
   "Took on Scrum Master & Project Management responsibilities, leading sprint planning, managing tasks in Jira, and ensuring smooth development cycles.",
   "Integrated third-party tools like Twilio (for messaging & calls), OpenAI (for AI-powered job descriptions), and Sentry (for error tracking) to enhance the product’s functionality.",
 ];
+
+const sharboScreenshots = [
+  "sharbo.jpg",
+  "sharbo_analysis.png",
+  "sharbo_form.png",
+  "sharbo_charts.png",
+];
+
 const CARDS = [
   {
     id: 0,
@@ -71,34 +79,16 @@ export default function WorkExperience() {
             Built and launched Aceternity UI and Aceternity UI Pro from scratch
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="https://assets.aceternity.com/templates/startup-1.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="https://assets.aceternity.com/templates/startup-2.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="https://assets.aceternity.com/templates/startup-3.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="https://assets.aceternity.com/templates/startup-4.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
+            {sharboScreenshots?.map((pic) => (
+              <Image
+                key={pic}
+                src={"/sharboScreenshots/" + pic}
+                alt="Sharbo - Product hunt screenshots"
+                width={500}
+                height={500}
+                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md shadow-neutral-600/40"
+              />
+            ))}
           </div>
         </div>
       ),
@@ -160,10 +150,10 @@ export default function WorkExperience() {
           </p>
           <div className="flex flex-col lg:flex-row h-80 w-full relative gap-2">
             {[
-              "techment_logo.jpg",
-              "techment-nextwealth.jpg",
-              "techment_team.jpg",
-              "techment-office.jpg",
+              "techment/techment_logo.jpg",
+              "techment/techment-nextwealth.jpg",
+              "techment/techment_team.jpg",
+              "techment/techment-office.jpg",
             ]?.map((url, i) => (
               <div
                 key={url}
