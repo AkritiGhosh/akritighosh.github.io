@@ -4,6 +4,7 @@ import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { CardStack } from "@/components/ui/cardStack";
 import {
+  sharboPortfolio,
   sharboScreenshots,
   sproutsFeatureCards,
   sproutsPortfolio,
@@ -37,6 +38,14 @@ export default function WorkExperience() {
               />
             ))}
           </div>
+          <ul className="leading-8 mt-5 text-base">
+            {sharboPortfolio?.map((pt, ix) => (
+              <li key={"spr" + ix}>
+                <span className="text-coral inline-block mr-2">✫</span>
+                {pt}
+              </li>
+            ))}
+          </ul>
         </div>
       ),
     },
@@ -63,7 +72,7 @@ export default function WorkExperience() {
           </p> */}
 
           <CardStack items={sproutsFeatureCards} />
-          <ul className="leading-8 text-base">
+          <ul className="leading-8 mt-5 text-base">
             {sproutsPortfolio?.map((pt, ix) => (
               <li key={"spr" + ix}>
                 <span className="text-coral inline-block mr-2">✫</span>

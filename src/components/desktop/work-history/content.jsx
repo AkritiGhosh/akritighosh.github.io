@@ -71,6 +71,40 @@ export const sproutsPortfolio = [
   </span>,
 ];
 
+export const sharboPortfolio = [
+  <span key={"sharbo" + 1}>
+    Helped launch Sharbo.io, an AI-powered competitor analysis tool that helps
+    businesses compare products, track competition, and make data-driven
+    decisions.
+  </span>,
+  <span key={"sharbo" + 2}>
+    Developed the core competitor analysis module, where users could generate
+    AI-driven reports, compare product features, and track industry trends.
+  </span>,
+  <span key={"sharbo" + 3}>
+    Built an interactive AI-powered report builder, allowing users to edit,
+    regenerate, and download PDF reports with insights tailored to their
+    business.
+  </span>,
+  <span key={"sharbo" + 4}>
+    Refactored the legacy codebase, fixing major performance issues and making
+    the UI faster and smoother.
+  </span>,
+  <span key={"sharbo" + 5}>
+    Integrated Sentry (for error tracking), Clerk (for authentication), and
+    Pendo (for user analytics & session replay) to enhance stability and user
+    experience.
+  </span>,
+  <span key={"sharbo" + 6}>
+    Delivered the final product on time, and it even ranked #3 on Product Hunt
+    during its launch! 🚀
+  </span>,
+  <span key={"sharbo" + 7}>
+    Contributed to the next-gen version of the product, adding new features with
+    a smaller but highly efficient team.
+  </span>,
+];
+
 export const techmentImgs = [
   "techment/techment_logo.jpg",
   "techment/techment-nextwealth.jpg",
