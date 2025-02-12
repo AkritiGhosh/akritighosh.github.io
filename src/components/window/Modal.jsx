@@ -21,7 +21,6 @@ const Modal = ({ id, children, className }) => {
     ? "w-full h-[calc(100%-56px)] top-0 absolute"
     : "w-[70vw] h-[70vh] left-[15vw] bottom-[15vh] rounded-sm border-gray-800 absolute border";
 
-  console.log(isMobile, className, modalData?.maximised, windowSize);
   return (
     <div className={className ?? windowSize}>
       {/* Title Bar */}
@@ -101,7 +100,7 @@ const Modal = ({ id, children, className }) => {
         </div>
       )}
       <div
-        className={`overflow-y-auto w-full relative ${
+        className={`overflow-y-auto overflow-x-hidden w-full relative ${
           !isMobile && showTitleBar ? "h-[calc(100%-3rem)]" : "h-full"
         } scroll-thin`}
       >
