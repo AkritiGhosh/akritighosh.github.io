@@ -50,10 +50,26 @@ export const ModalContextProvider = ({ children }) => {
 
   const getModalData = (id) => modals.find((modal) => modal?.id == id);
 
-  const changeModalOpen = (id, open) =>
-    setModals(
-      modals.map((prev) => (prev?.id == id ? { ...prev, open: open } : prev))
-    );
+  const changeModalOpen = (id, open) => {
+    // If Start menu is open, close it before opening the other modal
+    if (
+      id != "START" &&
+      open == true &&
+      modals.find((modal) => modal?.id == "START")?.open
+    ) {
+      setModals((prev) => {
+        return prev.map((modal) => {
+          if (modal?.id == "START") return { ...modal, open: false };
+          if (modal?.id == id) return { ...modal, open: !modal?.open };
+          return modal;
+        });
+      });
+    } else {
+      setModals(
+        modals.map((prev) => (prev?.id == id ? { ...prev, open: open } : prev))
+      );
+    }
+  };
   const closeAllModals = () =>
     setModals(modals?.map((modal) => ({ ...modal, open: false })));
   const toggleModal = (id) =>
