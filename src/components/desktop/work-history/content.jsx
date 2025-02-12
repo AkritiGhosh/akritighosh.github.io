@@ -114,10 +114,11 @@ export const techmentImgs = [
 
 export const sproutsFeatureCards = [
   {
-    id: 0,
-    name: "Manu Arora",
-    designation: "Senior Software Engineer",
-    content: (
+    id: "Auth",
+    title: "Authentication and Authorization",
+    imgSrc: null,
+    tags: ["JWT", "OAuth", "SSO", "RBAC"],
+    description: (
       <span key={1}>
         These cards are amazing, I want to use them in my project. Framer motion
         is a godsend ngl tbh fam 🙏
@@ -125,10 +126,10 @@ export const sproutsFeatureCards = [
     ),
   },
   {
-    id: 1,
-    name: "Elon Musk",
-    designation: "Senior Shitposter",
-    content: (
+    id: "PDFParsing",
+    title: "Parsing PDF Documents",
+    imgSrc: null,
+    description: (
       <span key={1}>
         I dont like this Twitter thing, deleting it right away because yolo.
         Instead, I would like to call it X.com so that it can easily be confused
@@ -137,10 +138,40 @@ export const sproutsFeatureCards = [
     ),
   },
   {
-    id: 2,
-    name: "Tyler Durden",
-    designation: "Manager Project Mayhem",
-    content: (
+    id: "RealTimeCall",
+    title: "Real time Video Conferencing",
+    imgSrc: null,
+    tags: ["Zoom Integration", "WebRTC", "Socket.io"],
+    description: (
+      <span key={1}>
+        The first rule of Fight Club is that you do not talk about fight club.
+        The second rule of Fight club is that you DO NOT TALK about fight club.
+      </span>
+    ),
+  },
+  {
+    id: "Transcription",
+    title: "Real time Call Transcription and Summarization",
+    imgSrc: null,
+    tags: [
+      "Socket.io",
+      "Speech-to-text",
+      "Natural Language Processing",
+      "AI Bot",
+    ],
+    description: (
+      <span key={1}>
+        The first rule of Fight Club is that you do not talk about fight club.
+        The second rule of Fight club is that you DO NOT TALK about fight club.
+      </span>
+    ),
+  },
+  {
+    id: "Analytics",
+    title: "Dynamic & Responsive custom Analytics",
+    imgSrc: null,
+    tags: ["D3.js", "Data Visualization", "Dynamic Reports"],
+    description: (
       <span key={1}>
         The first rule of Fight Club is that you do not talk about fight club.
         The second rule of Fight club is that you DO NOT TALK about fight club.
