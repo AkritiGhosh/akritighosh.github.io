@@ -12,6 +12,18 @@ const TechmentPortfolio = [
   "Documented onboarding processes for new developers and clients, which became the go-to playbook for every new team member. Conducted code reviews and helped onboard new developers, ensuring clean and maintainable code.",
   "Worked in a fast-paced Agile environment with daily scrums and quick iterative development based on client feedback.",
 ];
+
+const sproutsPortfolio = [
+  "Built a powerful AI-driven hiring platform from the ground up—think LinkedIn meets an AI-powered ATS that matches candidates to jobs based on resumes and job descriptions.",
+  "Created an interactive job search experience, where candidates could auto-fill profiles via resume parsing, get AI-generated match scores, and apply directly.",
+  "Developed an advanced hiring dashboard for recruiters, integrating real-time analytics, job tracking, and candidate assessments in one place.",
+  "Engineered AI-powered interview assistance, where an AI bot joined interviews, transcribed responses in real-time, and suggested follow-up questions to recruiters.",
+  "Designed data-driven hiring insights using D3.js, giving recruiters clear visual reports on job performance, candidate pipeline, and team efficiency.",
+  "Built a custom component library with Storybook and Tailwind, making UI development faster and more consistent across teams.",
+  "Managed hiring for the engineering team, conducting interviews, onboarding developers, and scaling the team from 4 to 12 members.",
+  "Took on Scrum Master & Project Management responsibilities, leading sprint planning, managing tasks in Jira, and ensuring smooth development cycles.",
+  "Integrated third-party tools like Twilio (for messaging & calls), OpenAI (for AI-powered job descriptions), and Sentry (for error tracking) to enhance the product’s functionality.",
+];
 const CARDS = [
   {
     id: 0,
@@ -55,7 +67,7 @@ export default function WorkExperience() {
       title: "2024",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Built and launched Aceternity UI and Aceternity UI Pro from scratch
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -95,13 +107,12 @@ export default function WorkExperience() {
       title: "2022",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-base font-normal mb-4">
+          <p className="text-neutral-200 text-base font-normal mb-4">
             Joined{" "}
             <span className="text-2xl font-medium inline-block ml-2">
               SproutsAI
             </span>
           </p>
-          <CardStack items={CARDS} />
 
           {/* <p>
           Authentication & Authorization
@@ -119,52 +130,14 @@ export default function WorkExperience() {
               Senior Software Engineer - Frontend lead
             </span>
           </p>
+          <CardStack items={CARDS} />
           <ul className="leading-8 text-base">
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Part of the founding team, as the lead of frontend team{" "}
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Managed team of 10+ engineers; contributed to origin of 15k lines
-              React project{" "}
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Supervised the project deadlines and team performance; conducted
-              sprint calls and meeting as the Scrum master
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Configured the platform architecture; contributed to the most
-              initial conception; setup and oversaw different project management
-              and team management tools; assisted in hosting the web application
-              via Route53
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Mentored the junior developers and interns{" "}
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Assigned daily tasks and supervised their status using Jira{" "}
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Developed multiple features from initial requirement gathering to
-              deployment into production
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Reviewed the code and PRs of team members
-            </li>
-            <li>
-              <span className="text-coral inline-block mr-2">✫</span>
-              Integrated several 3rd party tools and softwares for complex
-              features such as Authentication & Authorization, SSO, video
-              conferencing, AI powered tools, data synchronization, sharing
-              information etc
-            </li>
+            {sproutsPortfolio?.map((pt, ix) => (
+              <li key={"spr" + ix}>
+                <span className="text-coral inline-block mr-2">✫</span>
+                {pt}
+              </li>
+            ))}
           </ul>
         </div>
       ),
@@ -173,7 +146,7 @@ export default function WorkExperience() {
       title: "2020",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-base font-normal mb-4">
+          <p className="text-neutral-200 text-base font-normal mb-4">
             Joined{" "}
             <span className="text-2xl font-medium inline-block ml-2">
               Techment Technologies
@@ -217,13 +190,13 @@ export default function WorkExperience() {
       content: (
         <div>
           <div className="w-full mt-5 mb-8 flex flex-col gap-2">
-            <p className="text-neutral-800 dark:text-coal text-base md:text-xl font-normal">
+            <p className="text-coal text-base md:text-xl font-normal">
               {"Graduated from college"}
             </p>
-            <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-2xl font-normal">
+            <p className="text-neutral-200 text-base md:text-2xl font-normal">
               {"Bachelors of Technology - Computer Science & Technology"}
             </p>
-            <p className="text-neutral-800 dark:text-coral text-base md:text-xl font-normal">
+            <p className="text-coral text-base md:text-xl font-normal">
               {"Government Engineering College, Raipur"}
             </p>
           </div>
