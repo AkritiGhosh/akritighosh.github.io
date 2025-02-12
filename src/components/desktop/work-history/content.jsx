@@ -40,8 +40,9 @@ export const sproutsPortfolio = [
     apply directly.
   </span>,
   <span key={3}>
-    Developed an advanced hiring dashboard for recruiters, integrating real-time
-    analytics, job tracking, and candidate assessments in one place.
+    Developed an advanced hiring dashboard for recruiters, generated customised
+    reports integrating real-time analytics, job compatibility, and candidate
+    assessments in one place.
   </span>,
   <span key={4}>
     Engineered AI-powered interview assistance, where an AI bot joined
@@ -52,10 +53,6 @@ export const sproutsPortfolio = [
     Designed data-driven hiring insights using D3.js, giving recruiters clear
     visual reports on job performance, candidate pipeline, and team efficiency.
   </span>,
-  <span key={6}>
-    Built a custom component library with Storybook and Tailwind, making UI
-    development faster and more consistent across teams.
-  </span>,
   <span key={7}>
     Managed hiring for the engineering team, conducting interviews, onboarding
     developers, and scaling the team from 4 to 12 members.
@@ -65,9 +62,8 @@ export const sproutsPortfolio = [
     planning, managing tasks in Jira, and ensuring smooth development cycles.
   </span>,
   <span key={9}>
-    Integrated third-party tools like Twilio (for messaging & calls), OpenAI
-    (for AI-powered job descriptions), and Sentry (for error tracking) to
-    enhance the product’s functionality.
+    Integrated third-party tools like Twilio (for messaging & calls) and Sentry
+    (for error tracking) to enhance the product’s functionality.
   </span>,
 ];
 
@@ -76,6 +72,10 @@ export const sharboPortfolio = [
     Helped launch Sharbo.io, an AI-powered competitor analysis tool that helps
     businesses compare products, track competition, and make data-driven
     decisions.
+  </span>,
+  <span key={"sharbo" + 6}>
+    Delivered the final product within deadline, which ranked #3 on Product Hunt
+    during its launch! 🚀
   </span>,
   <span key={"sharbo" + 2}>
     Developed the core competitor analysis module, where users could generate
@@ -95,10 +95,6 @@ export const sharboPortfolio = [
     Pendo (for user analytics & session replay) to enhance stability and user
     experience.
   </span>,
-  <span key={"sharbo" + 6}>
-    Delivered the final product on time, and it even ranked #3 on Product Hunt
-    during its launch! 🚀
-  </span>,
   <span key={"sharbo" + 7}>
     Contributed to the next-gen version of the product, adding new features with
     a smaller but highly efficient team.
@@ -116,36 +112,29 @@ export const sproutsFeatureCards = [
   {
     id: "Auth",
     title: "Authentication and Authorization",
-    imgSrc: null,
+    imgSrc: "Auth2.png",
     tags: ["JWT", "OAuth", "SSO", "RBAC"],
-    description: (
-      <span key={1}>
-        These cards are amazing, I want to use them in my project. Framer motion
-        is a godsend ngl tbh fam 🙏
-      </span>
-    ),
   },
   {
     id: "PDFParsing",
     title: "Parsing PDF Documents",
-    imgSrc: null,
+    imgSrc: "Parsing.png",
     description: (
       <span key={1}>
-        I dont like this Twitter thing, deleting it right away because yolo.
-        Instead, I would like to call it X.com so that it can easily be confused
-        with adult sites.
+        Parsing PDF documents to extract text information, helping users avoid
+        repetitive filling personal information.
       </span>
     ),
   },
   {
     id: "RealTimeCall",
     title: "Real time Video Conferencing",
-    imgSrc: null,
+    imgSrc: "Zoom.png",
     tags: ["Zoom Integration", "WebRTC", "Socket.io"],
     description: (
       <span key={1}>
-        The first rule of Fight Club is that you do not talk about fight club.
-        The second rule of Fight club is that you DO NOT TALK about fight club.
+        Integrated Zoom SDK to enable real-time video conferencing and other
+        features to conduct interviews.
       </span>
     ),
   },
@@ -161,20 +150,20 @@ export const sproutsFeatureCards = [
     ],
     description: (
       <span key={1}>
-        The first rule of Fight Club is that you do not talk about fight club.
-        The second rule of Fight club is that you DO NOT TALK about fight club.
+        Used AI to transcribe real-time calls and summarize the conversation,
+        helping recruiters focus on the interview.
       </span>
     ),
   },
   {
     id: "Analytics",
     title: "Dynamic & Responsive custom Analytics",
-    imgSrc: null,
+    imgSrc: "D3JS.svg",
     tags: ["D3.js", "Data Visualization", "Dynamic Reports"],
     description: (
       <span key={1}>
-        The first rule of Fight Club is that you do not talk about fight club.
-        The second rule of Fight club is that you DO NOT TALK about fight club.
+        Built custom analytics reports using D3.js to visualize hiring trends,
+        candidate performance, and user efficiency.
       </span>
     ),
   },
