@@ -59,18 +59,6 @@ export default function WorkExperience() {
             jobType={"Full-time"}
             location={"Fully Remote"}
           />
-
-          {/* <p>
-          Authentication & Authorization
-          SSO
-          RBAC
-          PDF parser
-          Real time video conferencing
-          RT transcription 
-          Video summarization
-          Dynamic analytics
-          </p> */}
-
           <CardStack items={sproutsFeatureCards} />
           <ul className="leading-8 mt-5 text-base">
             {sproutsPortfolio?.map((pt, ix) => (
