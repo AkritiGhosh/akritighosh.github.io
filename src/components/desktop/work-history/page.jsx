@@ -10,6 +10,7 @@ import {
   techmentImgs,
   techmentPortfolio,
 } from "./content";
+import Header from "./Header";
 
 export default function WorkExperience() {
   const data = [
@@ -17,9 +18,13 @@ export default function WorkExperience() {
       title: "2024",
       content: (
         <div>
-          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
-          </p>
+          <Header
+            company={"Stealth startup"}
+            position={"Software Engineer | Frontend developer"}
+            jobType={"Contract"}
+            location={"Fully Remote"}
+          />
+
           <div className="grid grid-cols-2 gap-4">
             {sharboScreenshots?.map((pic) => (
               <Image
@@ -39,12 +44,12 @@ export default function WorkExperience() {
       title: "2022",
       content: (
         <div>
-          <p className="text-neutral-200 text-base font-normal mb-4">
-            Joined{" "}
-            <span className="text-2xl font-medium inline-block ml-2">
-              SproutsAI
-            </span>
-          </p>
+          <Header
+            company={"SproutsAI"}
+            position={"Senior Software Engineer | Lead Frontend developer"}
+            jobType={"Full-time"}
+            location={"Fully Remote"}
+          />
 
           {/* <p>
           Authentication & Authorization
@@ -56,12 +61,7 @@ export default function WorkExperience() {
           Video summarization
           Dynamic analytics
           </p> */}
-          <p className="mb-4">
-            <span className="text-neutral-200 text-base font-normal">As</span>
-            <span className="text-2xl font-medium inline-block ml-2">
-              Senior Software Engineer - Frontend lead
-            </span>
-          </p>
+
           <CardStack items={sproutsFeatureCards} />
           <ul className="leading-8 text-base">
             {sproutsPortfolio?.map((pt, ix) => (
@@ -78,18 +78,12 @@ export default function WorkExperience() {
       title: "2020",
       content: (
         <div>
-          <p className="text-neutral-200 text-base font-normal mb-4">
-            Joined{" "}
-            <span className="text-2xl font-medium inline-block ml-2">
-              Techment Technologies
-            </span>
-          </p>
-          <p className="mb-4">
-            <span className="text-neutral-200 text-base font-normal">As</span>
-            <span className="text-2xl font-medium inline-block ml-2">
-              Software Engineer
-            </span>
-          </p>
+          <Header
+            company={"Techment Technology"}
+            position={"Software Engineer"}
+            jobType={"Full-time"}
+            location={"Bhilai, India"}
+          />
           <div className="flex flex-col lg:flex-row h-80 w-full relative gap-2">
             {techmentImgs?.map((url, i) => (
               <div
