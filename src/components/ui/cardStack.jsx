@@ -54,7 +54,7 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
 
   return (
     <div
-      className={`relative h-80 min-w-60 w-4/5 md:h-80 ${
+      className={`relative h-80 min-w-60 w-80 md:h-80 ${
         isModalMaximised("EXPERIENCE")
           ? "lg:w-[25rem]"
           : "lg:max-w-80"
@@ -67,7 +67,7 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
             className={`absolute bg-[#181818] h-80 w-full md:h-80  ${
               isModalMaximised("EXPERIENCE")
                 ? "lg:w-[25rem]"
-                : "md:w-60 lg:w-80 "
+                : "md:w-80 "
             } rounded-3xl p-4 shadow-xl border border-white/[0.1] shadow-white/[0.05] flex flex-col justify-between`}
             style={{
               transformOrigin: "center right",
@@ -80,14 +80,14 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
             }}
           >
             <div className="flex flex-col gap-2 grow justify-evenly">
-              <p className="font-medium text-base md:text-lg text-white pb-1.5 md:pb-2.5 border-b border-neutral-500">
+              <p className="font-medium text-base lg:text-lg !leading-tight text-white pb-1.5 lg:pb-2 border-b border-neutral-500">
                 {card.title}
               </p>
               {card?.imgSrc && (
                 <Image
                   width={240}
                   height={120}
-                  className="w-auto h-20 md:h-[8.25rem] object-cover rounded-lg mx-auto"
+                  className="w-auto h-20 lg:h-[8.25rem] object-cover rounded-lg mx-auto"
                   src={"/featureCards/" + card.imgSrc}
                   alt={card.title}
                 />
@@ -96,14 +96,14 @@ export const CardStack = ({ items, offset, scaleFactor }) => {
                 {card?.tags?.map((tag, i) => (
                   <span
                     key={card?.id + i}
-                    className="font-normal bg-coal/40 text-neutral-200 py-0.5 md:py-1 px-1.5 md:px-2 rounded-lg text-xs"
+                    className="font-normal bg-coal/40 text-neutral-200 py-0.5 lg:py-1 px-1.5 lg:px-2 rounded-lg text-xs"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
               {card?.description && (
-                <p className="text-white text-xs md:text-sm">
+                <p className="text-white text-xs lg:text-sm">
                   {card.description}
                 </p>
               )}

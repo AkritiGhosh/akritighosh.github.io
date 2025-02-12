@@ -162,8 +162,8 @@ export const sproutsFeatureCards = [
     tags: ["D3.js", "Data Visualization", "Dynamic Reports"],
     description: (
       <span key={1}>
-        Built custom analytics reports using D3.js to visualize hiring trends,
-        candidate performance, and user efficiency.
+        Built custom analytics using D3.js for custom spider charts, combined
+        charts, timelines.
       </span>
     ),
   },
