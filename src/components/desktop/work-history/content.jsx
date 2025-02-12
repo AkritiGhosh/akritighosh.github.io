@@ -1,22 +1,74 @@
 export const techmentPortfolio = [
-  "Built customizable digital fliers and microsites for major universities and hospitals (Stanford, Harvard, UBC) to boost donor engagement. Think of it as a dynamic CMS but tailored for non-profits.",
-  "Created analytics reports using Google Charts to visualize fundraising trends and donor behavior, making reports more insightful.",
-  "Developed a fully responsive, dynamic template CMS that allowed clients to generate webpages with unique URL and download high-quality PDFs of promotional materials.",
-  "Took ownership of the reports and analytics section, improving performance and making data insights more intuitive and accessible.",
-  "Documented onboarding processes for new developers and clients, which became the go-to playbook for every new team member. Conducted code reviews and helped onboard new developers, ensuring clean and maintainable code.",
-  "Worked in a fast-paced Agile environment with daily scrums and quick iterative development based on client feedback.",
+  <span key={"techPt" + 1}>
+    Built customizable digital fliers and microsites for major universities and
+    hospitals (Stanford, Harvard, UBC) to boost donor engagement. Think of it as
+    a dynamic CMS but tailored for non-profits.
+  </span>,
+  <span key={"techPt" + 2}>
+    Created analytics reports using Google Charts to visualize fundraising
+    trends and donor behavior, making reports more insightful.
+  </span>,
+  <span key={"techPt" + 3}>
+    Developed a fully responsive, dynamic template CMS that allowed clients to
+    generate webpages with unique URL and download high-quality PDFs of
+    promotional materials.
+  </span>,
+  <span key={"techPt" + 4}>
+    Took ownership of the reports and analytics section, improving performance
+    and making data insights more intuitive and accessible.
+  </span>,
+  <span key={"techPt" + 5}>
+    Documented onboarding processes for new developers and clients, which became
+    the go-to playbook for every new team member. Conducted code reviews and
+    helped onboard new developers, ensuring clean and maintainable code.
+  </span>,
+  <span key={"techPt" + 6}>
+    Worked in a fast-paced Agile environment with daily scrums and quick
+    iterative development based on client feedback.
+  </span>,
 ];
 
 export const sproutsPortfolio = [
-  "Built a powerful AI-driven hiring platform from the ground up—think LinkedIn meets an AI-powered ATS that matches candidates to jobs based on resumes and job descriptions.",
-  "Created an interactive job search experience, where candidates could auto-fill profiles via resume parsing, get AI-generated match scores, and apply directly.",
-  "Developed an advanced hiring dashboard for recruiters, integrating real-time analytics, job tracking, and candidate assessments in one place.",
-  "Engineered AI-powered interview assistance, where an AI bot joined interviews, transcribed responses in real-time, and suggested follow-up questions to recruiters.",
-  "Designed data-driven hiring insights using D3.js, giving recruiters clear visual reports on job performance, candidate pipeline, and team efficiency.",
-  "Built a custom component library with Storybook and Tailwind, making UI development faster and more consistent across teams.",
-  "Managed hiring for the engineering team, conducting interviews, onboarding developers, and scaling the team from 4 to 12 members.",
-  "Took on Scrum Master & Project Management responsibilities, leading sprint planning, managing tasks in Jira, and ensuring smooth development cycles.",
-  "Integrated third-party tools like Twilio (for messaging & calls), OpenAI (for AI-powered job descriptions), and Sentry (for error tracking) to enhance the product’s functionality.",
+  <span key={1}>
+    Built a powerful AI-driven hiring platform from the ground up—think LinkedIn
+    meets an AI-powered ATS that matches candidates to jobs based on resumes and
+    job descriptions.
+  </span>,
+  <span key={2}>
+    Created an interactive job search experience, where candidates could
+    auto-fill profiles via resume parsing, get AI-generated match scores, and
+    apply directly.
+  </span>,
+  <span key={3}>
+    Developed an advanced hiring dashboard for recruiters, integrating real-time
+    analytics, job tracking, and candidate assessments in one place.
+  </span>,
+  <span key={4}>
+    Engineered AI-powered interview assistance, where an AI bot joined
+    interviews, transcribed responses in real-time, and suggested follow-up
+    questions to recruiters.
+  </span>,
+  <span key={5}>
+    Designed data-driven hiring insights using D3.js, giving recruiters clear
+    visual reports on job performance, candidate pipeline, and team efficiency.
+  </span>,
+  <span key={6}>
+    Built a custom component library with Storybook and Tailwind, making UI
+    development faster and more consistent across teams.
+  </span>,
+  <span key={7}>
+    Managed hiring for the engineering team, conducting interviews, onboarding
+    developers, and scaling the team from 4 to 12 members.
+  </span>,
+  <span key={8}>
+    Took on Scrum Master & Project Management responsibilities, leading sprint
+    planning, managing tasks in Jira, and ensuring smooth development cycles.
+  </span>,
+  <span key={9}>
+    Integrated third-party tools like Twilio (for messaging & calls), OpenAI
+    (for AI-powered job descriptions), and Sentry (for error tracking) to
+    enhance the product’s functionality.
+  </span>,
 ];
 
 export const techmentImgs = [
@@ -32,10 +84,10 @@ export const sproutsFeatureCards = [
     name: "Manu Arora",
     designation: "Senior Software Engineer",
     content: (
-      <p>
+      <span key={1}>
         These cards are amazing, I want to use them in my project. Framer motion
         is a godsend ngl tbh fam 🙏
-      </p>
+      </span>
     ),
   },
   {
@@ -43,11 +95,11 @@ export const sproutsFeatureCards = [
     name: "Elon Musk",
     designation: "Senior Shitposter",
     content: (
-      <p>
+      <span key={1}>
         I dont like this Twitter thing, deleting it right away because yolo.
         Instead, I would like to call it X.com so that it can easily be confused
         with adult sites.
-      </p>
+      </span>
     ),
   },
   {
@@ -55,18 +107,17 @@ export const sproutsFeatureCards = [
     name: "Tyler Durden",
     designation: "Manager Project Mayhem",
     content: (
-      <p>
+      <span key={1}>
         The first rule of Fight Club is that you do not talk about fight club.
         The second rule of Fight club is that you DO NOT TALK about fight club.
-      </p>
+      </span>
     ),
   },
 ];
 
 export const sharboScreenshots = [
-    "sharbo.jpg",
-    "sharbo_analysis.png",
-    "sharbo_form.png",
-    "sharbo_charts.png",
-  ];
-  
+  "sharbo.jpg",
+  "sharbo_analysis.png",
+  "sharbo_form.png",
+  "sharbo_charts.png",
+];
