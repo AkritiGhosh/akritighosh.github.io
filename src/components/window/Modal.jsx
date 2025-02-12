@@ -5,47 +5,46 @@ import useTheme from "@/hooks/useTheme";
 import Image from "next/image";
 import React, { useContext } from "react";
 
-const Modal = ({
-  title,
-  children,
-  showTitleBar,
-  className,
-  windowKey,
-  titleIcon,
-}) => {
-  const [maximized, setMaximized] = React.useState(true);
+const Modal = ({ id, children, className }) => {
   const { isMobile } = useTheme();
-  console.log(isMobile);
-  const { closeModal } = useContext(ModalContext);
+  const { getModalData, changeModalOpen, changeModalSize } = useContext(ModalContext);
+
+  const modalData = getModalData(id);
+  const showTitleBar = modalData?.title == false ? false : true;
+  const title = showTitleBar ? modalData?.title?.text : "";
+  const titleIcon = showTitleBar ? modalData?.title?.icon : "";
 
   const windowSize = isMobile
     ? "w-full h-[calc(100%-32px)] inset-0 absolute z-[99]"
-    : maximized
+    : modalData?.maximized
     ? "w-full h-[calc(100%-56px)] top-0 absolute"
     : "w-[70vw] h-[70vh] left-[15vw] bottom-[15vh] rounded-sm border-gray-800 absolute border";
+
   return (
     <div className={className ?? windowSize}>
       {/* Title Bar */}
       {!isMobile && showTitleBar && (
         <div
           className={`w-full h-12 flex items-center justify-between pl-4 py-1 bg-[#181818] ${
-            !maximized && `rounded-t-sm`
+            !modalData?.maximized && `rounded-t-sm`
           }`}
         >
           <h1 className="flex gap-3 h-12 items-center">
-            <Image
-              className="object-contain w-5 h-5"
-              src={titleIcon}
-              width={18}
-              height={18}
-              alt="Hello"
-            />
+            {titleIcon && (
+              <Image
+                className="object-contain w-5 h-5"
+                src={titleIcon}
+                width={18}
+                height={18}
+                alt="Hello"
+              />
+            )}
             <span className="inline-block text-base"> {title}</span>
           </h1>
           <div className="w-auto h-12 relative flex">
-            {maximized ? (
+            {modalData?.maximized ? (
               <button
-                onClick={() => setMaximized(false)}
+                onClick={() => changeModalSize(id, false)}
                 className="h-12 w-12 px-2 hover:bg-slate-500/20 inline-flex items-center justify-center"
               >
                 <svg
@@ -64,7 +63,7 @@ const Modal = ({
               </button>
             ) : (
               <button
-                onClick={() => setMaximized(true)}
+                onClick={() => changeModalSize(id, true)}
                 className="h-12 w-12 px-2 hover:bg-slate-500/20 inline-flex items-center justify-center"
               >
                 <svg fill="#ffffff" viewBox="0 0 330 330" className="size-3.5">
@@ -76,9 +75,9 @@ const Modal = ({
               </button>
             )}
             <button
-              onClick={() => closeModal(windowKey)}
+              onClick={() => changeModalOpen(id, false)}
               className={`h-12 w-12 px-2 hover:bg-red-500/70 ${
-                !maximized && `rounded-tr-sm`
+                !modalData?.maximized && `rounded-tr-sm`
               } inline-flex items-center justify-center`}
             >
               <svg

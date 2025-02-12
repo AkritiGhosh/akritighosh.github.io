@@ -20,7 +20,7 @@ export default function Home() {
     >
       {isModalOpen("START") && (
         <Modal
-          showTitleBar={false}
+          id="START"
           className={
             "absolute w-full lg:w-1/2 min-h-[50%] h-[calc(100%-32px)] lg:h-auto left-0 lg:left-1/4 bottom-8 lg:bottom-16 ring-white ring-1 ring-opacity-10 rounded overflow-hidden"
           }
@@ -29,12 +29,7 @@ export default function Home() {
         </Modal>
       )}
       {isModalOpen("EXPERIENCE") && (
-        <Modal
-          showTitleBar={true}
-          title="Work History"
-          titleIcon="/history.png"
-          windowKey={"EXPERIENCE"}
-        >
+        <Modal id="EXPERIENCE">
           <WorkExperience />
         </Modal>
       )}

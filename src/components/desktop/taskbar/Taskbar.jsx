@@ -7,8 +7,13 @@ import React, { useContext } from "react";
 
 const Taskbar = () => {
   const { isMobile } = useTheme();
-  const { toggleModal, closeAllModals, isAnyModalOpen } =
-    useContext(ModalContext);
+  const {
+    toggleModal,
+    changeModalOpen,
+    closeAllModals,
+    isAnyModalOpen,
+    isModalOpen,
+  } = useContext(ModalContext);
 
   return (
     <div className="w-full flex fixed h-auto lg:h-14 bottom-0 flex-col items-center justify-center lg:gap-x-5 lg:border-t lg:border-stone-700">
@@ -16,7 +21,11 @@ const Taskbar = () => {
         <div className="w-full max-w-sm lg:max-w-full mx-auto h-14 flex items-center justify-evenly lg:justify-center lg:gap-x-8 bg-transparent lg:bg-stone-950/90">
           <button
             onClick={() => toggleModal("START")}
-            className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-2 rounded-sm hover:bg-stone-700/60`}
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center p-2 rounded-sm hover:bg-stone-700/60 ${
+              isModalOpen("START")
+                ? "bg-stone-700/60"
+                : "bg-black/70 lg:bg-transparent"
+            }`}
           >
             <Image
               className="object-contain w-auto"
@@ -27,8 +36,12 @@ const Taskbar = () => {
             />
           </button>
           <button
-            onClick={() => toggleModal("EXPERIENCE")}
-            className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60`}
+            onClick={() => changeModalOpen("EXPERIENCE", true)}
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center p-1.5 rounded-sm hover:bg-stone-700/60  border-b-4 ${
+              isModalOpen("EXPERIENCE")
+                ? "bg-stone-700/60 border-neutral-200"
+                : "bg-black/70 lg:bg-transparent  border-transparent"
+            }`}
           >
             <Image
               className="object-contain w-auto"
@@ -39,8 +52,12 @@ const Taskbar = () => {
             />
           </button>
           <button
-            onClick={() => toggleModal("PROJECTS")}
-            className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60`}
+            onClick={() => changeModalOpen("PROJECTS", true)}
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center p-1.5 rounded-sm hover:bg-stone-700/60  border-b-4 ${
+              isModalOpen("PROJECTS")
+                ? "bg-stone-700/60 border-neutral-200"
+                : "bg-black/70 lg:bg-transparent border-transparent"
+            }`}
           >
             <Image
               className="object-contain w-auto"
@@ -51,8 +68,12 @@ const Taskbar = () => {
             />
           </button>
           <button
-            onClick={() => toggleModal("CONTACT")}
-            className={`cursor-pointer w-10 h-10 flex items-center justify-center bg-black/70 lg:bg-transparent p-1.5 rounded-sm hover:bg-stone-700/60`}
+            onClick={() => changeModalOpen("CONTACT", true)}
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center p-1.5 rounded-sm hover:bg-stone-700/60  border-b-4 ${
+              isModalOpen("CONTACT")
+                ? "bg-stone-700/60 border-neutral-200"
+                : "bg-black/70 lg:bg-transparent border-transparent"
+            }`}
           >
             <Image
               className="object-contain w-auto"

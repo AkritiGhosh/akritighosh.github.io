@@ -48,13 +48,11 @@ export const ModalContextProvider = ({ children }) => {
   const isModalMaximised = (id) =>
     modals.find((modal) => modal?.id == id)?.maximixed;
 
-  const openModal = (id) =>
+  const getModalData = (id) => modals.find((modal) => modal?.id == id);
+
+  const changeModalOpen = (id, open) =>
     setModals(
-      modals.map((prev) => (prev?.id == id ? { ...prev, open: true } : prev))
-    );
-  const closeModal = (id) =>
-    setModals(
-      modals.map((prev) => (prev?.id == id ? { ...prev, open: false } : prev))
+      modals.map((prev) => (prev?.id == id ? { ...prev, open: open } : prev))
     );
   const closeAllModals = () =>
     setModals(modals?.map((modal) => ({ ...modal, open: false })));
@@ -65,17 +63,24 @@ export const ModalContextProvider = ({ children }) => {
       )
     );
 
+  const changeModalSize = (id, maximized) =>
+    setModals(
+      modals.map((prev) =>
+        prev?.id == id ? { ...prev, maximized: maximized } : prev
+      )
+    );
+
   return (
     <ModalContext.Provider
       value={{
-        modals,
         isAnyModalOpen,
         isModalOpen,
         isModalMaximised,
-        openModal,
-        closeModal,
+        changeModalOpen,
         toggleModal,
         closeAllModals,
+        changeModalSize,
+        getModalData,
       }}
     >
       {children}
