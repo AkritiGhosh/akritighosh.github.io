@@ -25,13 +25,14 @@ const Modal = ({
     : "w-[70vw] h-[70vh] left-[15vw] bottom-[15vh] rounded-sm border-gray-800 absolute border";
   return (
     <div className={className ?? windowSize}>
+      {/* Title Bar */}
       {!isMobile && showTitleBar && (
         <div
-          className={`w-full h-10 flex items-center justify-between pl-4 py-1 bg-[#181818] ${
+          className={`w-full h-12 flex items-center justify-between pl-4 py-1 bg-[#181818] ${
             !maximized && `rounded-t-sm`
           }`}
         >
-          <h1 className="flex gap-3 h-10 items-center">
+          <h1 className="flex gap-3 h-12 items-center">
             <Image
               className="object-contain w-5 h-5"
               src={titleIcon}
@@ -41,11 +42,11 @@ const Modal = ({
             />
             <span className="inline-block text-base"> {title}</span>
           </h1>
-          <div className="w-auto h-10 relative flex">
+          <div className="w-auto h-12 relative flex">
             {maximized ? (
               <button
                 onClick={() => setMaximized(false)}
-                className="h-10 w-10 px-2 hover:bg-slate-300/30 inline-flex items-center justify-center"
+                className="h-12 w-12 px-2 hover:bg-slate-500/20 inline-flex items-center justify-center"
               >
                 <svg
                   fill="none"
@@ -64,7 +65,7 @@ const Modal = ({
             ) : (
               <button
                 onClick={() => setMaximized(true)}
-                className="h-10 w-10 px-2 hover:bg-slate-300/30 inline-flex items-center justify-center"
+                className="h-12 w-12 px-2 hover:bg-slate-500/20 inline-flex items-center justify-center"
               >
                 <svg fill="#ffffff" viewBox="0 0 330 330" className="size-3.5">
                   <path
@@ -76,7 +77,7 @@ const Modal = ({
             )}
             <button
               onClick={() => closeModal(windowKey)}
-              className={`h-10 w-10 px-2 hover:bg-red-500/70 ${
+              className={`h-12 w-12 px-2 hover:bg-red-500/70 ${
                 !maximized && `rounded-tr-sm`
               } inline-flex items-center justify-center`}
             >
@@ -100,7 +101,7 @@ const Modal = ({
       )}
       <div
         className={`overflow-y-auto w-full relative ${
-          !isMobile && showTitleBar ? "h-[calc(100%-40px)]" : "h-full"
+          !isMobile && showTitleBar ? "h-[calc(100%-3rem)]" : "h-full"
         } scroll-thin`}
       >
         {children}
