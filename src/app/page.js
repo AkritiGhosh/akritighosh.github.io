@@ -6,6 +6,7 @@ import StartMenu from "@/components/desktop/StartMenu";
 import { ModalContext } from "@/context/ModelContext";
 import { useContext } from "react";
 import WorkExperience from "@/components/desktop/work-history/page";
+import Projects from "@/components/desktop/projects/page";
 
 export default function Home() {
   const { bgURL } = useTheme();
@@ -31,6 +32,11 @@ export default function Home() {
       {isModalOpen("EXPERIENCE") && (
         <Modal id="EXPERIENCE">
           <WorkExperience />
+        </Modal>
+      )}
+       {isModalOpen("PROJECTS") && (
+        <Modal id="PROJECTS">
+          <Projects />
         </Modal>
       )}
     </div>
