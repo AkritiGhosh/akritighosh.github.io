@@ -1,32 +1,63 @@
-const fileType = {
+export const fileType = {
   FOLDER: "folder",
   FILE: "file",
   PYTHON: "python",
   REACT: "react",
-  TS: "react-ts",
   NOTEBOOK: "jupyter-notebook",
   PDF: "pdf",
 };
 
-const parentFolder = {
+export const parentFolder = {
   PERSONAL: "PERSONAL",
   OFFICE: "OFFICE",
   CERTIFICATES: "CERTIFICATES",
   RESEARCH: "RESEARCH",
   COMPETITIVE: "COMPETITIVE",
 };
-const folders = [
+
+export const categories = {
+  SDE: "Software Development",
+  FRONT: "Frontend Development",
+  FULL: "Full Stack Development",
+  AIML: "Machine Learning",
+  DS: "Data Analysis and Data Science",
+  CV: "Computer Vision",
+  DSA: "Competitive Programming",
+};
+export const accessType = {
+  PUBLIC: "Public",
+  PRIVATE: "Private",
+};
+export const sortBy = {
+  NAME: "Alphabetical",
+  CREATED: "Date Created",
+  MODIFIED: "Date Modified",
+};
+export const groupBy = {
+  NONE: "None",
+  TYPE: "Type",
+  CATEGORY: "Category",
+  TECH_STACK: "Language/Stack",
+  ACCESS: "Access",
+  STATUS: "Completion Status",
+};
+export const statusProject = {
+  SOON: "Coming Soon",
+  ACTIVE: "In progress",
+  DONE: "Completed",
+};
+export const folders = [
   {
     id: "PERSONAL",
     title: "Personal Projects",
     description:
       "Notable projects I have worked on in my free time, for practice and upskilling.",
   },
-//   {
-//     id: "OFFICE",
-//     title: "Commercial Projects",
-//     description: "Professional projects I have worked on.",
-//   },
+  //   {
+  //     id: "OFFICE",
+  //     title: "Commercial Projects",
+  //     description: "Professional projects I have worked on.",
+  //   },
   {
     id: "CERTIFICATES",
     title: "Certifications",
@@ -45,38 +76,7 @@ const folders = [
       "Coding competitions, assessments and challenges I have participated in, on multiple platform.",
   },
 ];
-const categories = {
-  SDE: "Software Development",
-  FRONT: "Frontend Development",
-  FULL: "Full Stack Development",
-  AIML: "Machine Learning",
-  DS: "Data Analysis and Data Science",
-  CV: "Computer Vision",
-  DSA: "Competitive Programming",
-};
-const accessType = {
-  PUBLIC: "Public",
-  PRIVATE: "Private",
-};
-const sortBy = {
-  NAME: "Alphabetical",
-  CREATED: "Date Created",
-  MODIFIED: "Date Modified",
-};
-const groupBy = {
-  NONE: "None",
-  TYPE: "Type",
-  CATEGORY: "Category",
-  TECH_STACK: "Language/Stack",
-  ACCESS: "Access",
-  STATUS: "Completion Status",
-};
-const statusProject = {
-  SOON: "Coming Soon",
-  ACTIVE: "In progress",
-  DONE: "Completed",
-};
-const projects = [
+export const projects = [
   {
     id: "BUILDNORDERPIZZA",
     imgSrc: null,
@@ -273,7 +273,7 @@ const projects = [
     techStack: ["Python", "OpenCV", "Image Processing", "MediaPipe"],
   },
 ];
-const research = [
+export const research = [
   {
     id: "RICE_LEAF_DISEASE",
     imgSrc: null,
@@ -294,7 +294,7 @@ const research = [
     techStack: ["Python", "Tensorflow", "Keras", "OpenCV"],
   },
 ];
-const certificates = [
+export const certificates = [
   {
     name: "Machine Learning",
     link: "https://drive.google.com/file/d/1dA2dfN3d0MSStsOPejm_0MPW8loMIwSA/preview",
