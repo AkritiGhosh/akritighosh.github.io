@@ -7,6 +7,7 @@ import {
   projects,
   research,
 } from "./data";
+import FileTree from "./FileTree";
 
 const fileBarHeightInRems = 2.5;
 const fileBarHeight = "h-" + fileBarHeightInRems * 4;
@@ -42,9 +43,7 @@ const Projects = () => {
       ></div>
       <div className={`w-full ${remainingWindowHeight} flex items-start`}>
         {/* Folder Tree */}
-        {!isMobile && (
-          <div className="w-1/4 h-full border-r border-neutral-400/40 overflow-y-auto py-4 px-3"></div>
-        )}
+        {!isMobile && <FileTree />}
         {/* Files in current folder */}
         <div className="w-full h-full overflow-y-auto p-4">
           {content?.map((data) => (

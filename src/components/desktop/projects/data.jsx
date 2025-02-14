@@ -9,7 +9,7 @@ export const fileType = {
 
 export const parentFolder = {
   PERSONAL: "PERSONAL",
-  OFFICE: "OFFICE",
+  //   OFFICE: "OFFICE",
   CERTIFICATES: "CERTIFICATES",
   RESEARCH: "RESEARCH",
   COMPETITIVE: "COMPETITIVE",
@@ -272,8 +272,7 @@ export const projects = [
     categories: [categories?.CV],
     techStack: ["Python", "OpenCV", "Image Processing", "MediaPipe"],
   },
-];
-export const research = [
+  ,
   {
     id: "RICE_LEAF_DISEASE",
     imgSrc: null,
@@ -293,32 +292,36 @@ export const research = [
     categories: [categories?.AIML, categories?.CV],
     techStack: ["Python", "Tensorflow", "Keras", "OpenCV"],
   },
-];
-export const certificates = [
   {
     name: "Machine Learning",
     link: "https://drive.google.com/file/d/1dA2dfN3d0MSStsOPejm_0MPW8loMIwSA/preview",
     by: "Stanford Online | Coursera",
+    parentFolder: parentFolder?.CERTIFICATES,
   },
   {
     name: "DeepLearning.AI Neural Networks and Deep Learning",
     link: "https://drive.google.com/file/d/1eFVz6xlaDXufYX4YFWsBVX4dpsX5Z5WA/preview",
     by: "DeepLearning.AI | Coursera",
+    parentFolder: parentFolder?.CERTIFICATES,
   },
   {
     name: "Data Science Math Skills",
     link: "https://drive.google.com/file/d/1MPCIu8QdY4ozk0GSP2rn08BXkBqH7pbF/preview",
     by: "Duke University | Coursera",
+    parentFolder: parentFolder?.CERTIFICATES,
   },
   {
     name: "MathWorks MATLAB Onramp",
     link: "https://drive.google.com/file/d/14kdQUDs2HS1kNVgzX1GMdx_i5Smwxz19/preview",
     by: "MathWorks",
+    parentFolder: parentFolder?.CERTIFICATES,
   },
   {
     name: "MathWorks Deep Learning Onramp",
     link: "https://drive.google.com/file/d/1maIOcRtU3g8HSo56OzKX8MSVwAgIs5dZ/preview",
     by: "MathWorks",
+    parentFolder: parentFolder?.CERTIFICATES,
+
     project: {
       id: "ROUND_WORM",
       imgSrc: null,
