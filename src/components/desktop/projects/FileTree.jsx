@@ -17,10 +17,9 @@ const FileTree = () => {
     id: folder,
     files: projects?.filter((project) => project?.parentFolder == folder),
   }));
-  console.log(tree);
 
   return (
-    <div className="w-1/4 h-full border-r border-neutral-400/40 overflow-y-auto py-4 scroll-thin">
+    <div className="w-1/4 min-w-60 h-full border-r border-neutral-400/40 overflow-y-auto py-4 scroll-thin">
       {tree?.map((folder) => (
         <>
           <button

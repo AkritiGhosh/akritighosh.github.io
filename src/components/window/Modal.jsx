@@ -34,7 +34,7 @@ const Modal = ({ id, children, className }) => {
             {titleIcon && (
               <Image
                 className="object-contain w-5 h-5"
-                src={titleIcon}
+                src={"/taskbar"+titleIcon}
                 width={18}
                 height={18}
                 alt="Hello"
