@@ -13,7 +13,7 @@ const modalState = [
   {
     id: "PROJECTS",
     title: {
-      text: "Projects in portfolio",
+      text: "Portfolio",
       icon: "/file-explorer.png",
     },
     open: false,
