@@ -7,6 +7,7 @@ import { ModalContext } from "@/context/ModelContext";
 import { useContext } from "react";
 import WorkExperience from "@/components/desktop/work-history/page";
 import Projects from "@/components/desktop/projects/page";
+import ExplorerContextProvider from "@/context/ExplorerContext";
 
 export default function Home() {
   const { bgURL } = useTheme();
@@ -34,9 +35,11 @@ export default function Home() {
           <WorkExperience />
         </Modal>
       )}
-       {isModalOpen("PROJECTS") && (
+      {isModalOpen("PROJECTS") && (
         <Modal id="PROJECTS">
-          <Projects />
+          <ExplorerContextProvider>
+            <Projects />
+          </ExplorerContextProvider>
         </Modal>
       )}
     </div>
