@@ -17,19 +17,17 @@ const arrowRight = (
 );
 
 const Address = () => {
-  const { activeFolder, activeFile } = useContext(ExplorerContext);
-  const folderPath = activeFolder?.title != null ? activeFolder?.title : "";
-  const filePath =
-    activeFolder?.title != null && activeFile?.name != null
-      ? activeFile?.name
-      : "";
+  const { activeFolder, activeFile, isFolderOpen, isFileOpen } =
+    useContext(ExplorerContext);
+  const folderPath = isFolderOpen ? activeFolder?.title : "";
+  const filePath = isFolderOpen && isFileOpen ? activeFile?.name : "";
 
   return (
     <div className="w-full h-full border-0 lg:border border-neutral-600 rounded-sm px-2 lg:py-0.5 lg:bg-[#111111]">
       <p className="text-white text-sm leading-6 flex items-center">
         {"Akriti Ghosh"} {arrowRight} {"Portfolio"}
-        {activeFolder?.title != null && arrowRight} {folderPath}
-        {activeFolder?.title != null && activeFile?.name != null && arrowRight}
+        {isFolderOpen && arrowRight} {folderPath}
+        {isFolderOpen && isFileOpen && arrowRight}
         {filePath}
       </p>
     </div>

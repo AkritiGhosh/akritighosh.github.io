@@ -3,7 +3,8 @@ import { folders, parentFolder, projects } from "./data";
 import { ExplorerContext } from "@/context/ExplorerContext";
 
 const FileTree = () => {
-  const { openFolder, openFile } = useContext(ExplorerContext);
+  const { openFolder, openFile, closeFolder, activeFolder, activeFile } =
+    useContext(ExplorerContext);
 
   const [treeOpen, setTreeOpen] = useState({
     PERSONAL: false,
@@ -21,6 +22,8 @@ const FileTree = () => {
     files: projects?.filter((project) => project?.parentFolder == folder),
   }));
 
+  console.log(tree, activeFile)
+
   const handleFolderClick = (id) => {
     if (!treeOpen[id]) openFolder(id);
     setTreeOpen((prev) => ({
@@ -29,16 +32,22 @@ const FileTree = () => {
     }));
   };
 
-  const handleFileClick = (id) => openFile(id);
-
   return (
     <div className="w-1/4 min-w-60 h-full border-r border-neutral-400/40 overflow-y-auto py-4 scroll-thin">
+      <button
+        onClick={closeFolder}
+        className={`w-full text-base font-serif tracking-wide flex gap-2 items-start text-left first-of-type:mt-0 mt-1 py-1 px-2 hover:bg-white/20 font-bold `}
+      >
+        Portfolio
+      </button>
       {tree?.map((folder) => (
         <>
           <button
             key={folder?.id}
             onClick={() => handleFolderClick(folder?.id)}
-            className="w-full text-sm flex gap-2 items-start text-left first-of-type:mt-0 mt-1 py-1 px-2 hover:bg-white/20"
+            className={`w-full text-sm flex gap-2 items-start text-left first-of-type:mt-0 mt-1 py-1 px-2 hover:bg-white/20 ${
+              activeFolder?.id == folder?.id ? "bg-white/20" : "bg-transparent"
+            }`}
           >
             {treeOpen[folder.id] ? (
               <svg
@@ -80,8 +89,12 @@ const FileTree = () => {
               {folder?.files?.map((file) => (
                 <button
                   key={file?.id}
-                  onClick={() => handleFileClick(file?.id)}
-                  className="w-full text-sm flex items-start text-left first-of-type:mt-0 mt-1 py-1 px-2 hover:bg-white/20 cursor-pointer"
+                  onClick={() => openFile(file?.id, folder?.id)}
+                  className={`w-full text-sm flex items-start text-left first-of-type:mt-0 mt-1 py-1 px-2 hover:bg-white/20 cursor-pointer ${
+                    activeFile?.id == file?.id
+                      ? "bg-white/20"
+                      : "bg-transparent"
+                  }`}
                 >
                   <span className={`text-sm font-medium text-neutral-300`}>
                     {file?.name}

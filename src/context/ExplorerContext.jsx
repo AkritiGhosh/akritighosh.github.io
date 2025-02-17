@@ -30,7 +30,7 @@ const ExplorerContextProvider = ({ children }) => {
   };
 
   const content = useMemo(() => {
-    if (activeFolder?.title != null)
+    if (isFolderOpen)
       return projects?.filter(
         (project) => project.parentFolder == activeFolder?.id
       );
