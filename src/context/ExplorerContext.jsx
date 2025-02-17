@@ -1,5 +1,5 @@
 import { folders, projects } from "@/components/desktop/projects/data";
-import React, { createContext, useState } from "react";
+import React, { createContext, useMemo, useState } from "react";
 
 export const ExplorerContext = createContext();
 
@@ -9,13 +9,15 @@ const ExplorerContextProvider = ({ children }) => {
   const [sortBy, setSortBy] = useState("");
   const [groupBy, setGroupBy] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const [view, setView] = useState('')
+  const [view, setView] = useState("");
 
-  const openFolder = (id) =>
-    setActiveFolder(folders.find((folder) => folder.id == id));
+  const openFolder = (id) => {
+    setActiveFolder(folders.find((folder) => folder?.id == id));
+    setActiveFile({});
+  };
 
   const openFile = (id) =>
-    setActiveFile(projects.find((file) => file.id == id));
+    setActiveFile(projects.find((file) => file?.id == id));
 
   const content = useMemo(() => {
     if (activeFolder != {})
@@ -27,7 +29,7 @@ const ExplorerContextProvider = ({ children }) => {
 
   return (
     <ExplorerContext.Provider
-      value={{ activeFile, activeFolder, openFile, openFolder }}
+      value={{ activeFile, activeFolder, openFile, openFolder, content }}
     >
       {children}
     </ExplorerContext.Provider>
