@@ -16,20 +16,39 @@ const ExplorerContextProvider = ({ children }) => {
     setActiveFile({});
   };
 
-  const openFile = (id) =>
+  const openFile = (id, folderId) => {
+    setActiveFolder(folders.find((folder) => folder?.id == folderId));
     setActiveFile(projects.find((file) => file?.id == id));
+  };
+
+  const isFolderOpen = activeFolder?.title != null;
+  const isFileOpen = activeFile?.name != null;
+
+  const closeFolder = () => {
+    setActiveFile({});
+    setActiveFolder({});
+  };
 
   const content = useMemo(() => {
-    if (activeFolder != {})
+    if (activeFolder?.title != null)
       return projects?.filter(
-        (project) => project.parentFolder == activeFolder
+        (project) => project.parentFolder == activeFolder?.id
       );
     else return folders;
   }, [activeFolder]);
 
   return (
     <ExplorerContext.Provider
-      value={{ activeFile, activeFolder, openFile, openFolder, content }}
+      value={{
+        activeFile,
+        activeFolder,
+        openFile,
+        openFolder,
+        content,
+        isFolderOpen,
+        isFileOpen,
+        closeFolder,
+      }}
     >
       {children}
     </ExplorerContext.Provider>
