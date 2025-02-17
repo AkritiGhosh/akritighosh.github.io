@@ -298,6 +298,7 @@ export const projects = [
     link: "https://drive.google.com/file/d/1dA2dfN3d0MSStsOPejm_0MPW8loMIwSA/preview",
     by: "Stanford Online | Coursera",
     parentFolder: parentFolder?.CERTIFICATES,
+    fileType: fileType?.PDF,
   },
   {
     id: "NN_DL",
@@ -305,6 +306,7 @@ export const projects = [
     link: "https://drive.google.com/file/d/1eFVz6xlaDXufYX4YFWsBVX4dpsX5Z5WA/preview",
     by: "DeepLearning.AI | Coursera",
     parentFolder: parentFolder?.CERTIFICATES,
+    fileType: fileType?.PDF,
   },
   {
     id: "DS_MATH_DUKE",
@@ -312,6 +314,7 @@ export const projects = [
     link: "https://drive.google.com/file/d/1MPCIu8QdY4ozk0GSP2rn08BXkBqH7pbF/preview",
     by: "Duke University | Coursera",
     parentFolder: parentFolder?.CERTIFICATES,
+    fileType: fileType?.PDF,
   },
   {
     id: "MATLAB",
@@ -319,6 +322,7 @@ export const projects = [
     link: "https://drive.google.com/file/d/14kdQUDs2HS1kNVgzX1GMdx_i5Smwxz19/preview",
     by: "MathWorks",
     parentFolder: parentFolder?.CERTIFICATES,
+    fileType: fileType?.PDF,
   },
   {
     id: "MATLAB_DL",
@@ -326,6 +330,7 @@ export const projects = [
     link: "https://drive.google.com/file/d/1maIOcRtU3g8HSo56OzKX8MSVwAgIs5dZ/preview",
     by: "MathWorks",
     parentFolder: parentFolder?.CERTIFICATES,
+    fileType: fileType?.PDF,
     project: {
       id: "ROUND_WORM",
       imgSrc: null,
