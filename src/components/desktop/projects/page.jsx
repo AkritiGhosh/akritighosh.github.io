@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <div className="w-full h-full bg-[#202020]">
       <Bar />
-      <div className={`w-full h-[calc(100%-2.5rem)] flex items-start`}>
+      <div className={`w-full h-[calc(100%-3rem)] flex items-start`}>
         {/* Folder Tree */}
         {!isMobile && <FileTree />}
         {/* Files in current folder */}
