@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { folders, parentFolder, projects } from "./data";
+import { ExplorerContext } from "@/context/ExplorerContext";
 
 const FileTree = () => {
+  const { openFolder, openFile } = useContext(ExplorerContext);
+
   const [treeOpen, setTreeOpen] = useState({
     PERSONAL: false,
     OFFICE: false,
@@ -18,19 +21,24 @@ const FileTree = () => {
     files: projects?.filter((project) => project?.parentFolder == folder),
   }));
 
+  const handleFolderClick = (id) => {
+    if (!treeOpen[id]) openFolder(id);
+    setTreeOpen((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  const handleFileClick = (id) => openFile(id);
+
   return (
     <div className="w-1/4 min-w-60 h-full border-r border-neutral-400/40 overflow-y-auto py-4 scroll-thin">
       {tree?.map((folder) => (
         <>
           <button
             key={folder?.id}
-            onClick={() =>
-              setTreeOpen((prev) => ({
-                ...prev,
-                [folder.id]: !prev[folder.id],
-              }))
-            }
-            className="w-full text-sm flex gap-2 items-center first-of-type:mt-0 mt-1 py-1 px-2 hover:bg-white/20"
+            onClick={() => handleFolderClick(folder?.id)}
+            className="w-full text-sm flex gap-2 items-start text-left first-of-type:mt-0 mt-1 py-1 px-2 hover:bg-white/20"
           >
             {treeOpen[folder.id] ? (
               <svg
@@ -70,14 +78,15 @@ const FileTree = () => {
           {treeOpen[folder.id] && (
             <div className="w-full pl-2 ml-4 border-l border-neutral-500">
               {folder?.files?.map((file) => (
-                <p
+                <button
                   key={file?.id}
-                  className="w-full text-sm flex items-center first-of-type:mt-0 mt-1 py-1 px-2 hover:bg-white/20"
+                  onClick={() => handleFileClick(file?.id)}
+                  className="w-full text-sm flex items-start text-left first-of-type:mt-0 mt-1 py-1 px-2 hover:bg-white/20 cursor-pointer"
                 >
                   <span className={`text-sm font-medium text-neutral-300`}>
                     {file?.name}
                   </span>
-                </p>
+                </button>
               ))}
             </div>
           )}
