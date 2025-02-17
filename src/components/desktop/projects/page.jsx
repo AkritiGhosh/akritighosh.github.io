@@ -17,7 +17,7 @@ const Projects = () => {
         <MainWindow />
         {/* Preview/Details pane */}
         {!isMobile && (
-          <div className="w-1/3 h-full border-l border-neutral-400/40 overflow-y-auto py-4 px-3"></div>
+          <div className="w-4/6 min-w-96 h-full border-l border-neutral-400/40 overflow-y-auto py-4 px-3"></div>
         )}
       </div>
     </div>

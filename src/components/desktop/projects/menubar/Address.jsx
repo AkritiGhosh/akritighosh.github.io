@@ -24,7 +24,7 @@ const Address = () => {
 
   return (
     <div className="w-full h-full border-0 lg:border border-neutral-600 rounded-sm px-2 lg:py-0.5 lg:bg-[#111111]">
-      <p className="text-white text-sm leading-6 flex items-center">
+      <p className="w-full text-white text-sm leading-6 flex items-center flex-wrap">
         {"Akriti Ghosh"} {arrowRight} {"Portfolio"}
         {isFolderOpen && arrowRight} {folderPath}
         {isFolderOpen && isFileOpen && arrowRight}
