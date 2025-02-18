@@ -1,11 +1,14 @@
 import useTheme from "@/hooks/useTheme";
-import React from "react";
+import React, { useContext } from "react";
 import FileTree from "./FileTree";
 import Bar from "./menubar/Bar";
 import MainWindow from "./main/MainWindow";
+import { ExplorerContext } from "@/context/ExplorerContext";
+import PreviewPane from "./preview/PreviewPane";
 
 const Projects = () => {
   const { isMobile } = useTheme();
+  const { isFileOpen } = useContext(ExplorerContext);
 
   return (
     <div className="w-full h-auto min-h-full lg:h-full bg-[#202020]">
@@ -13,11 +16,19 @@ const Projects = () => {
       <div className={`w-full h-[calc(100%-3rem)] flex items-start`}>
         {/* Folder Tree */}
         {!isMobile && <FileTree />}
-        {/* Files in current folder */}
-        <MainWindow />
-        {/* Preview/Details pane */}
-        {!isMobile && (
-          <div className="w-4/6 min-w-96 h-full border-l border-neutral-400/40 overflow-y-auto py-4 px-3"></div>
+        {isMobile ? (
+          isFileOpen ? (
+            <PreviewPane />
+          ) : (
+            <MainWindow />
+          )
+        ) : (
+          <>
+            {/* Files in current folder */}
+            <MainWindow />
+            {/* Preview/Details pane */}
+            <PreviewPane />
+          </>
         )}
       </div>
     </div>
