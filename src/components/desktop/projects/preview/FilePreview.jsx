@@ -72,6 +72,8 @@ const ProjectPreview = ({ activeFile }) => {
       </div>
       {activeFile?.imgSrc && (
         <Image
+          width={128}
+          height={128}
           className="w-full h-auto object-cover my-4"
           src={activeFile?.imgSrc}
           alt={activeFile?.name}
