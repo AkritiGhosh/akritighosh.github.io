@@ -29,6 +29,8 @@ const ExplorerContextProvider = ({ children }) => {
     setActiveFolder({});
   };
 
+  const closeFile = () => setActiveFile({});
+
   const content = useMemo(() => {
     if (isFolderOpen)
       return projects?.filter(
@@ -48,6 +50,7 @@ const ExplorerContextProvider = ({ children }) => {
         isFolderOpen,
         isFileOpen,
         closeFolder,
+        closeFile,
       }}
     >
       {children}
