@@ -21,65 +21,65 @@ const Taskbar = () => {
         <div className="w-full max-w-sm lg:max-w-full mx-auto h-14 flex items-center justify-evenly lg:justify-center lg:gap-x-8 bg-transparent lg:bg-stone-950/90">
           <button
             onClick={() => toggleModal("START")}
-            className={`cursor-pointer w-10 h-10 flex items-center justify-center p-2 rounded-sm hover:bg-stone-700/60 ${
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center rounded-sm hover:bg-stone-700/60 ${
               isModalOpen("START")
                 ? "bg-stone-700/60"
                 : "bg-black/70 lg:bg-transparent"
             }`}
           >
             <Image
-              className="object-contain w-auto"
-              src="/taskbar/start.png"
-              width={26}
-              height={26}
+              className="object-contain w-6"
+              src={isMobile ? "/taskbar/appMenu.png" : "/taskbar/start.png"}
+              width={28}
+              height={28}
               alt="Hello"
             />
           </button>
           <button
             onClick={() => changeModalOpen("EXPERIENCE", true)}
-            className={`cursor-pointer w-10 h-10 flex items-center justify-center p-1.5 rounded-sm hover:bg-stone-700/60  border-b-4 ${
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center rounded-sm hover:bg-stone-700/60  border-b-4 ${
               isModalOpen("EXPERIENCE")
                 ? "bg-stone-700/60 border-neutral-200"
                 : "bg-black/70 lg:bg-transparent  border-transparent"
             }`}
           >
             <Image
-              className="object-contain w-auto"
+              className="object-contain w-8"
               src="/taskbar/history.png"
-              width={26}
-              height={26}
+              width={28}
+              height={28}
               alt="Experience"
             />
           </button>
           <button
             onClick={() => changeModalOpen("PROJECTS", true)}
-            className={`cursor-pointer w-10 h-10 flex items-center justify-center p-1.5 rounded-sm hover:bg-stone-700/60  border-b-4 ${
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center rounded-sm hover:bg-stone-700/60  border-b-4 ${
               isModalOpen("PROJECTS")
                 ? "bg-stone-700/60 border-neutral-200"
                 : "bg-black/70 lg:bg-transparent border-transparent"
             }`}
           >
             <Image
-              className="object-contain w-auto"
+              className="object-contain w-7"
               src="/taskbar/file-explorer.png"
-              width={26}
-              height={26}
+              width={28}
+              height={28}
               alt="Projects"
             />
           </button>
           <button
             onClick={() => changeModalOpen("CONTACT", true)}
-            className={`cursor-pointer w-10 h-10 flex items-center justify-center p-1.5 rounded-sm hover:bg-stone-700/60  border-b-4 ${
+            className={`cursor-pointer w-10 h-10 flex items-center justify-center rounded-sm hover:bg-stone-700/60  border-b-4 ${
               isModalOpen("CONTACT")
                 ? "bg-stone-700/60 border-neutral-200"
                 : "bg-black/70 lg:bg-transparent border-transparent"
             }`}
           >
             <Image
-              className="object-contain w-auto"
-              src="/taskbar/contact.png"
-              width={26}
-              height={26}
+              className="object-contain w-8 lg:w-7"
+              src={isMobile ? "/taskbar/phone.svg" : "/taskbar/contact.png"}
+              width={28}
+              height={28}
               alt="Contact"
             />
           </button>
