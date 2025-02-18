@@ -8,7 +8,7 @@ const PreviewPane = () => {
   const { isMobile } = useTheme();
   const { isFileOpen, activeFolder, closeFile } = useContext(ExplorerContext);
   return isFileOpen ? (
-    <div className="w-full lg:w-7/12 h-auto lg:h-full lg:border-l border-neutral-400/40 overflow-y-auto py-4 px-3 flex flex-col gap-4">
+    <div className="w-full h-auto lg:h-full lg:border-l border-neutral-400/40 overflow-y-auto py-2 md:py-4 lg:py-6 px-3 flex flex-col gap-4">
       {isMobile && (
         <button
           onClick={closeFile}
