@@ -1,7 +1,45 @@
-import React from "react";
+import { ExplorerContext } from "@/context/ExplorerContext";
+import React, { useContext } from "react";
+import FilePreview from "./FilePreview";
+import FolderPreview from "./FolderPreview";
+import useTheme from "@/hooks/useTheme";
 
 const PreviewPane = () => {
-  return <div>PreviewPane</div>;
+  const { isMobile } = useTheme();
+  const { isFileOpen, activeFolder, closeFile } = useContext(ExplorerContext);
+  return isFileOpen ? (
+    <div className="w-full lg:w-7/12 h-auto lg:h-full lg:border-l border-neutral-400/40 overflow-y-auto py-4 px-3 flex flex-col gap-4">
+      {isMobile && (
+        <button
+          onClick={closeFile}
+          className="w-full flex items-center gap-2 text-neutral-400 hover:font-semibold group"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6 group-hover:stroke-2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <span className="text-sm ">
+            Back to {activeFolder?.title}
+          </span>
+        </button>
+      )}
+      <FilePreview />
+    </div>
+  ) : (
+    <div>
+      <FolderPreview className="w-full lg:w-1/3 h-auto lg:h-full lg:border-l border-neutral-400/40 overflow-y-auto py-4 px-3 flex flex-col gap-4" />
+    </div>
+  );
 };
 
 export default PreviewPane;
