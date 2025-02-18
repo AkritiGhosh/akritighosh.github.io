@@ -38,7 +38,7 @@ export const Timeline = ({ data }) => {
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
             <div
-              className={`sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs ${
+              className={`sticky flex flex-col md:flex-row items-center top-40 self-start max-w-xs ${
                 isModalMaximised("EXPERIENCE") ? "lg:max-w-md md:w-full" : "lg:max-w-sm"
               }`}
             >
