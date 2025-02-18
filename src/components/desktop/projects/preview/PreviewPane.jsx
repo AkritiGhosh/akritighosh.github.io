@@ -28,17 +28,13 @@ const PreviewPane = () => {
               d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
             />
           </svg>
-          <span className="text-sm ">
-            Back to {activeFolder?.title}
-          </span>
+          <span className="text-sm ">Back to {activeFolder?.title}</span>
         </button>
       )}
       <FilePreview />
     </div>
   ) : (
-    <div>
-      <FolderPreview className="w-full lg:w-1/3 h-auto lg:h-full lg:border-l border-neutral-400/40 overflow-y-auto py-4 px-3 flex flex-col gap-4" />
-    </div>
+    <FolderPreview className="w-full lg:w-1/3 h-auto lg:h-full lg:border-l border-neutral-400/40 overflow-y-auto py-4 px-3 flex flex-col gap-4" />
   );
 };
 
