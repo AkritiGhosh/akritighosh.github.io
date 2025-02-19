@@ -8,6 +8,7 @@ const ContactMe = () => {
     <div className="w-full h-auto min-h-full lg:h-full bg-[#202020] flex flex-col lg:flex-row lg:divide-x divide-neutral-400/40">
       <div className="w-full lg:w-5/12 flex flex-col gap-4 p-4 lg:p-8 scroll-thin">
         <Image
+        alt="Akriti Ghosh"
           src="/ProfilePic.jpg"
           width={100}
           height={100}
@@ -34,6 +35,7 @@ const ContactMe = () => {
               width={24}
               height={24}
               className="size-6 min-w-6"
+              alt="Github link"
             />
           <span className="w-auto text-sm group-hover:underline group-hover:underline-offset-2">github.com/AkritiGhosh/</span>
         </Link>
@@ -48,6 +50,7 @@ const ContactMe = () => {
               width={24}
               height={24}
               className="size-6 min-w-6"
+              alt="LinkedIn Profile"
             />
           <span className="w-auto text-sm group-hover:underline group-hover:underline-offset-2">
             www.linkedin.com/in/akriti-ghosh-12b6a9153/

@@ -29,7 +29,7 @@ const StartMenu = () => {
         <div className="relative bottom-0 w-full h-16 flex items-center gap-6 bg-[#181818] py-4 px-4 lg:px-[10%] rounded-b-lg">
           <Image
             className="object-contain w-auto h-full rounded-full bg-white"
-            src="/resume.png"
+            src="/ProfilePic.jpg"
             width={32}
             height={32}
             alt="DP"
