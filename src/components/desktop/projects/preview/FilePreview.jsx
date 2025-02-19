@@ -66,7 +66,7 @@ const ProjectPreview = ({ activeFile }) => {
       <div className="w-full flex flex-row flex-wrap gap-2">
         {activeFile?.categories?.map((tag) => (
           <span
-            key={"_".join(tag.split(" ")).toUpperCase()}
+            key={tag.split(" ").join().toUpperCase()}
             className="w-auto py-1 px-2 rounded-md text-sm bg-coral/40"
           >
             {tag}
@@ -92,7 +92,7 @@ const ProjectPreview = ({ activeFile }) => {
           </Label>
           {activeFile?.link?.map((gitLink) => (
             <Link
-              key={"_".join(gitLink?.alt.split(" ")).toUpperCase()}
+              key={gitLink?.alt.split(" ").join().toUpperCase()}
               target="_blank"
               title={gitLink?.alt}
               href={gitLink?.link}
@@ -152,9 +152,8 @@ const ProjectPreview = ({ activeFile }) => {
       <div className="w-full flex flex-row flex-wrap gap-2">
         {activeFile?.techStack?.map((tag) => (
           <span
-            key={"_".join(tag.split(" ")).toUpperCase()}
-            className="w-auto py-1 px-2 rounded-md text-sm bg-teal/60"
-          >
+            key={tag.split(" ").join().toUpperCase()}
+           className="w-auto py-1 px-2 rounded-md text-sm bg-teal/60">
             {tag}
           </span>
         ))}
