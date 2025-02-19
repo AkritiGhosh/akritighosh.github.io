@@ -57,6 +57,8 @@ const CertificationPreview = () => {
 };
 
 const ProjectPreview = ({ activeFile }) => {
+  console.log(activeFile?.categories[0].split(" ").join("_").toUpperCase());
+
   return (
     <>
       <h1 className="text-5xl xl:text-6xl font-bold text-white font-display">
@@ -66,7 +68,7 @@ const ProjectPreview = ({ activeFile }) => {
       <div className="w-full flex flex-row flex-wrap gap-2">
         {activeFile?.categories?.map((tag) => (
           <span
-            key={tag.split(" ").join().toUpperCase()}
+            key={tag.split(" ").join("_").toUpperCase()}
             className="w-auto py-1 px-2 rounded-md text-sm bg-coral/40"
           >
             {tag}
@@ -153,7 +155,8 @@ const ProjectPreview = ({ activeFile }) => {
         {activeFile?.techStack?.map((tag) => (
           <span
             key={tag.split(" ").join().toUpperCase()}
-           className="w-auto py-1 px-2 rounded-md text-sm bg-teal/60">
+            className="w-auto py-1 px-2 rounded-md text-sm bg-teal/60"
+          >
             {tag}
           </span>
         ))}

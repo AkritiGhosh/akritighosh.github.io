@@ -22,8 +22,6 @@ const FileTree = () => {
     files: projects?.filter((project) => project?.parentFolder == folder),
   }));
 
-  console.log(tree, activeFile)
-
   const handleFolderClick = (id) => {
     if (!treeOpen[id]) openFolder(id);
     setTreeOpen((prev) => ({
