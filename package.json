@@ -1,0 +1,34 @@
+{
+  "homepage": "https://akritighosh.github.io",
+  "name": "akritighosh.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run open-browser && next dev",
+    "open-browser": "start http://localhost:3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "export": "next export",
+    "deploy": "next build && git add . && git commit -m 'Deploy' && git push origin main"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@tabler/icons-react": "^3.22.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.17",
+    "next": "15.0.2",
+    "react": "19.0.0-rc-02c0e824-20241028",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "15.0.2",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
