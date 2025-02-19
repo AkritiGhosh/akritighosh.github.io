@@ -8,6 +8,7 @@ import { useContext } from "react";
 import WorkExperience from "@/components/desktop/work-history/page";
 import Projects from "@/components/desktop/projects/page";
 import ExplorerContextProvider from "@/context/ExplorerContext";
+import ContactMe from "@/components/desktop/get-in-touch/page";
 
 export default function Home() {
   const { bgURL } = useTheme();
@@ -39,6 +40,13 @@ export default function Home() {
         <Modal id="PROJECTS">
           <ExplorerContextProvider>
             <Projects />
+          </ExplorerContextProvider>
+        </Modal>
+      )}
+       {isModalOpen("CONTACT") && (
+        <Modal id="CONTACT">
+          <ExplorerContextProvider>
+            <ContactMe />
           </ExplorerContextProvider>
         </Modal>
       )}
