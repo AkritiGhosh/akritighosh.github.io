@@ -11,7 +11,7 @@
     "lint": "next lint",
     "predeploy": "npm run build",
     "export": "next export",
-    "deploy": "next build && next export && gh-pages -d out"
+    "deploy": "next build && git add . && git commit -m 'Deploy' && git push origin main"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

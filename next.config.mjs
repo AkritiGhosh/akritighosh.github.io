@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "",
   output: "export",
+  basePath: "",
+  assetPrefix: "./", // Required for correct asset loading in GitHub Pages
   images: {
     unoptimized: true, // GitHub Pages does not support Next.js image optimization
     remotePatterns: [
