@@ -57,8 +57,6 @@ const CertificationPreview = () => {
 };
 
 const ProjectPreview = ({ activeFile }) => {
-  console.log(activeFile?.categories[0].split(" ").join("_").toUpperCase());
-
   return (
     <>
       <h1 className="text-5xl xl:text-6xl font-bold text-white font-display">
