@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tabler/icons-react": "^3.22.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",

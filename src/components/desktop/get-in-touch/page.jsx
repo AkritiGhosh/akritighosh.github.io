@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import EmailSection from "./EmailSection";
 
 const ContactMe = () => {
   return (
-    <div className="w-full h-auto min-h-full lg:h-full bg-[#202020] flex flex-col lg:flex-row divide-x divide-neutral-400/40">
+    <div className="w-full h-auto min-h-full lg:h-full bg-[#202020] flex flex-col lg:flex-row lg:divide-x divide-neutral-400/40">
       <div className="w-full lg:w-5/12 flex flex-col gap-4 p-4 lg:p-8 scroll-thin">
         <Image
           src="/ProfilePic.jpg"
@@ -53,7 +54,7 @@ const ContactMe = () => {
           </span>
         </Link>
       </div>
-      <div className="w-full grow"></div>
+      <EmailSection/>
     </div>
   );
 };
