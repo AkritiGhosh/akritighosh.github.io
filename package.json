@@ -8,10 +8,11 @@
     "open-browser": "start http://localhost:3000",
     "build": "next build",
     "start": "next start",
+    "static": "next build && echo ./out/.nojekyll && echo 'akritighosh.github.io' > ./out/CNAME",
     "lint": "next lint",
     "predeploy": "npm run build",
     "export": "next export",
-   "deploy": "gh-pages  -d out"
+   "deploy": "gh-pages  -d out -t"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
