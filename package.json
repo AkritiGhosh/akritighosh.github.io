@@ -12,7 +12,7 @@
     "lint": "next lint",
     "predeploy": "npm run build",
     "export": "next export",
-   "deploy": "gh-pages  -d out -t"
+   "deploy": "gh-pages -d out --nojekyll --cname akritighosh.github.io"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
