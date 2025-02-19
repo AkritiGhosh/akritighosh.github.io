@@ -36,7 +36,7 @@ const EmailSection = () => {
   return (
     <div className="w-full grow p-4 lg:py-5 lg:px-[10%] flex flex-col justify-center">
       <h1 className="text-lg lg:text-xl font-medium text-white">
-        Let's talk !
+        {"Let's talk !"}
       </h1>
       <h4 className="text-sm font-medium text-neutral-500">
         Send me an email at <i>akritighosh98@gmail.com</i>
